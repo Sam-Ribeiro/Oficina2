@@ -61,10 +61,15 @@ Os testes E2E serão implementados com **Robot Framework**, simulando o comporta
 
 ----
 ## 🛠️ Tecnologias Utilizadas
+
 Frontend: React
+
 Backend: C#
+
 Banco de Dados: SQL Server
+
 Testes unitários: xUnit
+
 Testes Front E2E e API: Robot Framework
 
 ----
