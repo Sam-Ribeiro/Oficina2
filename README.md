@@ -20,8 +20,32 @@ Sistema web desenvolvido para a disciplina de Oficina de Integração II, com o 
 |      |                                                                                       |
 
 ---
-## Arquitetura em alto nível do sistema
+## 🧩Arquitetura em alto nível do sistema
 
+O sistema segue o modelo de arquitetura cliente-servidor, composto pelos seguintes componentes principais:
+
+- Frontend: Desenvolvido em React, responsável pela interface do usuário e pela interação com o sistema. Realiza requisições HTTP para o backend e exibe os dados ao usuário.
+- Backend: Implementado em C# com ASP.NET Core (API REST), responsável pelas regras de negócio, validações, controle de acesso e exposição de endpoints.
+- Autenticação: Utiliza autenticação baseada em JSON Web Token (JWT), garantindo que apenas usuários autenticados possam acessar determinados recursos do sistema.
+- Banco de Dados: Utiliza SQL Server para armazenamento persistente dos dados, garantindo integridade e consistência das informações.
+- Comunicação: A comunicação entre frontend e backend é realizada via protocolo HTTP, utilizando APIs REST e troca de dados no formato JSON.
+
+### 🔄 Fluxo de Funcionamento
+- O usuário acessa o sistema através do frontend.
+- O frontend envia requisições HTTP para a API backend.
+- O backend valida a requisição e, quando necessário, autentica o usuário utilizando JWT.
+- O backend processa a lógica de negócio.
+- O backend realiza operações no banco de dados (SQL Server).
+- O backend retorna a resposta ao frontend em formato JSON.
+- O frontend atualiza a interface com base nos dados recebidos.
+
+### 🔐 Fluxo de Autenticação (JWT)
+- O usuário realiza login informando suas credenciais.
+- O backend valida os dados e gera um token JWT.
+- O token é retornado ao frontend.
+- O frontend armazena o token (ex: localStorage).
+- A cada requisição protegida, o token é enviado no header HTTP.
+- O backend valida o token antes de permitir o acesso aos recursos.
 
 ---- 
 ## Estratégia de automação de testes do sistema 
@@ -37,6 +61,7 @@ Os testes de backend serão implementados utilizando **xUnit**, com foco em:
 
 **Objetivo:** garantir que a lógica do sistema funcione corretamente de forma isolada e integrada.
 
+
 ### 🌐 Testes de API (Robot Framework)
 
 Os testes de API serão realizados com **Robot Framework**, validando:
@@ -48,6 +73,7 @@ Os testes de API serão realizados com **Robot Framework**, validando:
 **Objetivo:** garantir se o backend funciona em no todo.
 
 ### 🖥️ Testes End-to-End (E2E) (Robot Framework)
+
 
 Os testes E2E serão implementados com **Robot Framework**, simulando o comportamento real do usuário:
 
