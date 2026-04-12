@@ -17,7 +17,14 @@ Sistema web desenvolvido para a disciplina de Oficina de Integração II, com o 
 | RF09 | O aluno deve visualizar oficinas e aulas matriculadas                                 |
 | RF10 | O sistema deve gerar certificados ao final da oficina                                 |
 | RF11 | O aluno deve poder baixar o certificado                                               |
-|      |                                                                                       |
+| RF12 | O Sistema deve apresentar dois ambientes diferentes                                   |
+| RF13 | O sistema deve permitir a definição de um limite máximo de vagas por oficina.         |
+| RF14 | O sistema deve validar a frequência mínima (ex: 75%) para liberar o certificado       |
+| RF15 | O professor/tutor deve poder alterar o status de uma oficina (Ex: Planejada, Em Andamento, Concluída, Cancelada).|
+| RF16 | O sistema deve permitir o cancelamento ou reagendamento de uma aula específica.       |
+
+
+
 
 ---
 ## 🧩Arquitetura em alto nível do sistema
