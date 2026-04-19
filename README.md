@@ -109,5 +109,6 @@ Testes Front E2E e API: Robot Framework
 
 ## Cronograma
 
+18/04 - Início do Projeto
 
 ----
