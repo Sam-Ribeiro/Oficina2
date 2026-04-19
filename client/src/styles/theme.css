@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+:root{
+    --placeholder: rgb(166, 166, 166);
+    --color-text: #000000;
+    --color-text2: #fff;
+    --background: var(--blue4);
+
+    --blue1: #93CCEA;
+    --blue2: #6BB2E1;
+    --blue3: #2596D1;
+    --blue4: #0072BB;
+    --blue5: #357DAC;
+    --blue6: #347CAC;
+    --blue7: #164370;
+    
+    --blueEllp: #0E87CC;
+
+    --orange1: #F3A357; 
+    --orange2: #FF9933;
+    --orange3: #E0842D;
+
+    --black1: #2C2C2C;
+    --gray1: #565051;
+}
