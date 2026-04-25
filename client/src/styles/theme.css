@@ -3,7 +3,7 @@
 :root{
     --placeholder: rgb(166, 166, 166);
     --color-text: #000000;
-    --color-text2: #fff;
+    --white: #fff;
     --background: var(--blue4);
 
     --blue1: #93CCEA;

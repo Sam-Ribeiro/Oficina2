@@ -5,6 +5,13 @@ function LoginButton() {
 
   function handleLogin() {
     localStorage.setItem('auth', 'true');
+    const user = {
+      name: "Samuel Ribeiro",
+      role: "Professor"
+    };
+
+    localStorage.setItem("user", JSON.stringify(user));
+
     navigate('/home');
   }
 

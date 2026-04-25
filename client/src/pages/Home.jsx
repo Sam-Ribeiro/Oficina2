@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
+import Header from "../components/Header";
+import '../styles/theme.css'
+import '../styles/common.css'
 
 function HomePage() {
     const [count, setCount] = useState(0)
@@ -12,7 +15,12 @@ function HomePage() {
 
     return (
     <>
-        <h1>Home Page</h1>
+        <Header></Header>
+        <main>
+            <h1>Home Page</h1>
+            <p>Count: {count}</p>
+            <button onClick={() => setCount(count + 1)}>Increment</button>
+        </main>
     </>
     )
 }

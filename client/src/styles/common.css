@@ -2,13 +2,21 @@
 
 body {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #root {
     height: 100dvh;
     width: 100dvw;
     margin: 0 auto;
-    background-color: var(--background);
+    background-color: var(--white);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+main {
+    padding: 20px;
+}
+
+.ellp {
+  font-family: 'Sniglet', cursive;
+}

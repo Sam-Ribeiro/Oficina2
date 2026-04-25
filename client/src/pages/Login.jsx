@@ -12,7 +12,7 @@ function LoginPage() {
     return (
         <div className="login-page">
             <div className="top-bg">
-                <img className= "ellpinho" src={ellpinho} alt="ellpinho" />;
+                <img className= "ellpinho" src={ellpinho} alt="ellpinho" />
             </div>
             <div className="login-container">
             <h2>Login</h2>
