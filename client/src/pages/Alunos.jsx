@@ -5,23 +5,30 @@ import SideNav from "../components/SideNav";
 import '../styles/theme.css'
 import '../styles/common.css'
 
-function HomePage() {
+function AlunosPage() {
     const [open, setOpen] = useState(true);
     const toggleNav = () => {
         setOpen(prev => !prev);
     };
 
+    const [alunos, setAlunos] = useState([]);
+    useEffect(() => {
+        api.get("/Aluno/get")
+        .then(res => setAlunos(res.data))
+        .catch(err => console.error(err));
+    }, []);
+
     return (
     <>
         <Header onToggleNav={toggleNav}></Header>
         <div className="container">
-            <SideNav pageIndex={0} open={open}></SideNav>
+            <SideNav pageIndex={5} open={open}></SideNav>
             <main>
-                <h1>Home Page</h1>
+                <h1>Alunos Page</h1>
             </main>
         </div>
     </>
     )
 }
 
-export default HomePage
+export default AlunosPage

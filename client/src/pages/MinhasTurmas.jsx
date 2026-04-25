@@ -5,7 +5,7 @@ import SideNav from "../components/SideNav";
 import '../styles/theme.css'
 import '../styles/common.css'
 
-function HomePage() {
+function MinhasTurmasPage() {
     const [open, setOpen] = useState(true);
     const toggleNav = () => {
         setOpen(prev => !prev);
@@ -15,13 +15,13 @@ function HomePage() {
     <>
         <Header onToggleNav={toggleNav}></Header>
         <div className="container">
-            <SideNav pageIndex={0} open={open}></SideNav>
+            <SideNav pageIndex={1} open={open}></SideNav>
             <main>
-                <h1>Home Page</h1>
+                <h1>Minhas Turmas Page</h1>
             </main>
         </div>
     </>
     )
 }
 
-export default HomePage
+export default MinhasTurmasPage

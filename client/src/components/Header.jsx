@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import '../styles/header.css'
-function Header() {
+import '../styles/menu.css'
+function Header({ onToggleNav }) {
     const navigate = useNavigate();
 
     function handleLogoff() {
@@ -11,14 +11,14 @@ function Header() {
     const user = JSON.parse(localStorage.getItem('user'));
     return (
         <header>
-            <span className="material-icons">menu</span>
+            <button className="material-icons" onClick={onToggleNav}>menu</button>
             <h2 className='ellp'>ELLP</h2>
             <div className="placeholder"></div>
             <div>
                 <p>{user?.name}</p>
                 <p>{user?.role}</p>
             </div>
-            <button onClick={handleLogoff}>Logoff</button>
+            <button className="material-icons" onClick={handleLogoff}>logout</button>
         </header>
     );
 }
