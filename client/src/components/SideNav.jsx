@@ -9,47 +9,61 @@ function SideNav({ pageIndex, open }) {
         localStorage.removeItem('user');
         navigate('/login');
     }
+    let user = JSON.parse(localStorage.getItem('user'));
     return (
         <nav className={`side-nav ${open ? '' : 'hidden'}`}>
             <ul>
                 <li>
-                    <Link className={pageIndex === 0 ? "actual-page" : ""} to="/home">
+                    <Link className={`${pageIndex === 0 ? "actual-page" : ""} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Aluno" || user.role === "Tutor" ? "" : "none"}`}
+                     to="/home">
                         Home 
                         <span className="material-icons">home</span>
                     </Link>
                 </li>
                 <li>
-                    <Link className={pageIndex === 1 ? "actual-page" : ""} to="/minhas-turmas">
+                    <Link className={`${pageIndex === 1 ? "actual-page" : ""} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Tutor" ? "" : "none"}`} 
+                    to="/minhas-turmas">
                         Minhas Turmas 
                         <span className="material-icons">groups</span>
                     </Link>
                 </li>
                 <li>
-                    <Link className={pageIndex === 2 ? "actual-page" : ""} to="/voluntarios">
+                    <Link className={`${pageIndex === 2 ? "actual-page" : ""} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" ? "" : "none"}`} 
+                    to="/voluntarios">
                         Voluntários 
                         <span className="material-icons">volunteer_activism</span>
                     </Link>
                 </li>
                 <li>
-                    <Link className={pageIndex === 3 ? "actual-page" : ""} to="/cursos">
+                    <Link className={`${pageIndex === 3 ? "actual-page" : ""} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Tutor" ? "" : "none"}`} 
+                    to="/cursos">
                         Cursos 
                         <span className="material-icons">school</span>
                     </Link>
                 </li>
                 <li>
-                    <Link className={pageIndex === 4 ? "actual-page" : ""} to="/turmas">
+                    <Link className={`${pageIndex === 4 ? "actual-page" : ""} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Tutor" ? "" : "none"}`} 
+                    to="/turmas">
                         Turmas 
                         <span className="material-icons">class</span>
                     </Link>
                 </li>
                 <li>
-                    <Link className={pageIndex === 5 ? "actual-page" : ""} to="/alunos">
+                    <Link className={`${pageIndex === 5 ? "actual-page" : ""} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Tutor" ? "" : "none"}`} 
+                    to="/alunos">
                         Alunos 
                         <span className="material-icons">people</span>
                     </Link>
                 </li>
                 <li>
-                    <Link className={pageIndex === 6 ? "actual-page" : ""} to="/meus-cursos">
+                    <Link className={`${pageIndex === 6 ? "actual-page" : ""} 
+                    ${user.role === "DEVELOPER" || user.role === "Aluno" ? "" : "none"}`} to="/meus-cursos">
                         Meus Cursos 
                         <span className="material-icons">library_books</span>
                     </Link>

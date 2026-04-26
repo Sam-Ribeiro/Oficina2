@@ -98,3 +98,7 @@ nav a:hover{
 .actual-page{
     background-color: var(--blue4);   
 }
+
+.none{
+    display: none;
+}

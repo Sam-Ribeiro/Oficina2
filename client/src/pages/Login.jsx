@@ -8,7 +8,7 @@ import ellpinho from '../assets/ellpinho_v2.png'
 
 function LoginPage() {
     const [email, setEmail] = useState('');
-    const [senha, setSenha] = useState('');
+    const [password, setSenha] = useState('');
     return (
         <div className="login-page">
             <div className="top-bg">
@@ -27,11 +27,15 @@ function LoginPage() {
             <input
                 type="password"
                 placeholder="Senha"
-                value={senha}
+                value={password}
                 onChange={(e) => setSenha(e.target.value)}
             />
 
-            <LoginButton />
+            <LoginButton email={email} password={password} />
+            <span>
+                Admin - Admin  |  Tutor - Tutor <br></br>
+                Professor - Professor  |  Aluno - Aluno
+            </span>
             </div>
             <div className="bottom-bg"></div>
         </div>

@@ -1,25 +1,30 @@
 import { useNavigate } from 'react-router-dom';
 
-function LoginButton() {
-  const navigate = useNavigate();
+function LoginButton( { email, password }) {
+    const navigate = useNavigate();
 
-  function handleLogin() {
-    localStorage.setItem('auth', 'true');
-    const user = {
-      name: "Samuel Ribeiro",
-      role: "Professor"
-    };
+    function handleLogin() {
+    
+        let user = {
+            name: "Samuel Ribeiro",
+            role: "DEVELOPER"
+        };
+            if (email === password) {
+            user = {
+                name: `Usuário ${email}`,
+                role: `${email}`
+            };
+        }
+        localStorage.setItem('auth', 'true');
+        localStorage.setItem("user", JSON.stringify(user));
+        navigate('/home');
+    }
 
-    localStorage.setItem("user", JSON.stringify(user));
-
-    navigate('/home');
-  }
-
-  return (
-    <button onClick={handleLogin}>
-      Entrar
-    </button>
-  );
+    return (
+        <button onClick={handleLogin}>
+            Entrar
+        </button>
+    );
 }
 
 export default LoginButton;
