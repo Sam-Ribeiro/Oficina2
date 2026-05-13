@@ -107,8 +107,17 @@ Testes Front E2E e API: Robot Framework
 
 ----
 
-## Cronograma
 
-18/04 - Início do Projeto
+## 📅 Cronograma
+
+O projeto segue o cronograma semestral da disciplina, dividido entre planejamento e ciclos de implementação (Sprints).
+
+| Período | Fase / Etapa | Atividades |
+| :--- | :--- | :--- |
+| **18/04 a 03/05** | **Planejamento** | Definição de requisitos, arquitetura, estratégia de testes e tecnologias. Configuração inicial do repositório e ambiente de desenvolvimento. |
+| **04/05 a 24/05** | **Sprint 1** | Implementação da autenticação (JWT), cadastro de usuários e gestão base de oficinas e aulas (RF01 a RF08). |
+| **25/05 a 31/05** | **Recuperação 1** | Período dedicado a ajustes técnicos, correção de bugs do primeiro sprint e refinamento de código. |
+| **01/06 a 21/06** | **Sprint 2** | Implementação de matrículas, controle de presença, limites de vagas e lógica de geração/download de certificados (RF09 a RF16). |
+| **22/06 a 28/06** | **Recuperação 2** | Finalização dos testes automatizados, ajustes finais de interface e conformidade com a arquitetura definida. |
 
 ----
