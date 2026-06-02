@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-function LoginButton( { email, password }) {
+function LoginButton( { email, password, id }) {
     const navigate = useNavigate();
 
     function handleLogin() {
@@ -21,7 +21,7 @@ function LoginButton( { email, password }) {
     }
 
     return (
-        <button onClick={handleLogin}>
+        <button onClick={handleLogin} type='submit' id={id}>
             Entrar
         </button>
     );

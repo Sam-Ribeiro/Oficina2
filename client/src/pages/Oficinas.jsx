@@ -5,7 +5,7 @@ import SideNav from "../components/SideNav";
 import '../styles/theme.css'
 import '../styles/common.css'
 
-function CursosPage() {
+function OficinasPage() {
     const [open, setOpen] = useState(true);
     const toggleNav = () => {
         setOpen(prev => !prev);
@@ -17,11 +17,11 @@ function CursosPage() {
         <div className="container">
             <SideNav pageIndex={3} open={open}></SideNav>
             <main>
-                <h1>Cursos Page</h1>
+                <h1>Oficinas Page</h1>
             </main>
         </div>
     </>
     )
 }
 
-export default CursosPage
+export default OficinasPage
