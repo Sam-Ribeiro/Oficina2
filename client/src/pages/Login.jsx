@@ -14,29 +14,31 @@ function LoginPage() {
             <div className="top-bg">
                 <img className= "ellpinho" src={ellpinho} alt="ellpinho" />
             </div>
-            <div className="login-container">
-            <h2>Login</h2>
+            <form className="login-container" 
+            onSubmit={(e) => { e.preventDefault(); document.getElementById('login-btn').click();}}>
+                <h2>Login</h2>
 
-            <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
 
-            <input
-                type="password"
-                placeholder="Senha"
-                value={password}
-                onChange={(e) => setSenha(e.target.value)}
-            />
+                <input
+                    type="password"
+                    placeholder="Senha"
+                    value={password}
+                    onChange={(e) => setSenha(e.target.value)}
 
-            <LoginButton email={email} password={password} />
-            <span>
-                Admin - Admin  |  Tutor - Tutor <br></br>
-                Professor - Professor  |  Aluno - Aluno
-            </span>
-            </div>
+                />
+
+                <LoginButton email={email} password={password} id="btnLogin" />
+                <span>
+                    Admin - Admin  |  Tutor - Tutor <br></br>
+                    Professor - Professor  |  Aluno - Aluno
+                </span>
+            </form>
             <div className="bottom-bg"></div>
         </div>
     )

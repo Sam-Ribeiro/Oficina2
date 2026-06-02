@@ -40,9 +40,9 @@ function SideNav({ pageIndex, open }) {
                 <li>
                     <Link className={`${pageIndex === 3 ? "actual-page" : ""} 
                     ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Tutor" ? "" : "none"}`} 
-                    to="/cursos">
-                        Cursos 
-                        <span className="material-icons">school</span>
+                    to="/oficinas">
+                        Oficinas 
+                        <span className="material-icons">library_books</span>
                     </Link>
                 </li>
                 <li>
@@ -63,8 +63,8 @@ function SideNav({ pageIndex, open }) {
                 </li>
                 <li>
                     <Link className={`${pageIndex === 6 ? "actual-page" : ""} 
-                    ${user.role === "DEVELOPER" || user.role === "Aluno" ? "" : "none"}`} to="/meus-cursos">
-                        Meus Cursos 
+                    ${user.role === "DEVELOPER" || user.role === "Aluno" ? "" : "none"}`} to="/minhas-oficinas">
+                        Minhas Oficinas 
                         <span className="material-icons">library_books</span>
                     </Link>
                 </li>

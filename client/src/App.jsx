@@ -3,10 +3,10 @@ import LoginPage from "./pages/Login";
 import HomePage from "./pages/Home";
 import MinhasTurmasPage from './pages/MinhasTurmas';
 import VoluntariosPage from './pages/Voluntarios';
-import CursosPage from './pages/Cursos';
+import OficinasPage from './pages/Oficinas';
 import TurmasPage from './pages/Turmas';
 import AlunosPage from './pages/Alunos';
-import MeusCursosPage from './pages/MeusCursos';
+import MinhasOficinasPage from './pages/MinhasOficinas';
 
 function App() {
   return ( 
@@ -17,10 +17,10 @@ function App() {
         <Route path="/home" element={<HomePage />} /> 
         <Route path="/minhas-turmas" element={<MinhasTurmasPage />} />
         <Route path="/voluntarios" element={<VoluntariosPage />} />
-        <Route path="/cursos" element={<CursosPage />} />
+        <Route path="/oficinas" element={<OficinasPage />} />
         <Route path="/turmas" element={<TurmasPage />} />
         <Route path="/alunos" element={<AlunosPage />} />
-        <Route path="/meus-cursos" element={<MeusCursosPage />} />
+        <Route path="/minhas-oficinas" element={<MinhasOficinasPage/>} />
       </Routes> 
     </BrowserRouter> 
     );
