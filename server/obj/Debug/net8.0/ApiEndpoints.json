@@ -77,5 +77,83 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.AulaController",
+    "Method": "CreateAula",
+    "RelativePath": "api/Aula/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "aula",
+        "Type": "server.Models.Aula",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.AulaController",
+    "Method": "GetAulas",
+    "RelativePath": "api/Aula/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.OficinaController",
+    "Method": "CreateOficina",
+    "RelativePath": "api/Oficina/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "oficina",
+        "Type": "server.Models.Oficina",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.OficinaController",
+    "Method": "GetOficinas",
+    "RelativePath": "api/Oficina/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.VoluntarioController",
+    "Method": "CreateVoluntario",
+    "RelativePath": "api/Voluntario/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voluntario",
+        "Type": "server.Models.Voluntario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.VoluntarioController",
+    "Method": "GetVoluntarios",
+    "RelativePath": "api/Voluntario/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

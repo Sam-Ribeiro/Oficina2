@@ -1,6 +1,8 @@
-using server.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+using server.Infrastructure;
 using server.Infrastructure.Repositories;
 using server.Infrastructure.Repositories.Interfaces;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +13,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<InMemoryContext>();
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
+builder.Services.AddScoped<IVoluntarioRepository, VoluntarioRepository>();
+builder.Services.AddScoped<IOficinaRepository, OficinaRepository>();
+builder.Services.AddScoped<IAulaRepository, AulaRepository>();
 
 builder.Services.AddCors(options =>
 {
