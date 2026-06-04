@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
-import '../styles/menu.css'
+import '../../styles/menu.css'
 
 function SideNav({ pageIndex, open }) {
     const navigate = useNavigate();

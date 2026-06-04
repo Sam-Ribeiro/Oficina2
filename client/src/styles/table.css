@@ -13,10 +13,15 @@ thead {
     background-color: var(--blue3) !important;
     color: var(--white);
 }
-th:first-child,
-td:first-child {
-    width: 60px;
+
+.small-column {
+    width: 55px;
 }
+
+.center{
+    text-align: center;
+}
+
 th,td {
     padding: 6px 10px;
     text-align: left;

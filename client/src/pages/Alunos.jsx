@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
-import Header from "../components/Header";
-import SideNav from "../components/SideNav";
-import PersonTable from "../components/PersonTable";
-import TableHeader from "../components/TableHeader";
+import Header from "../components/common/Header";
+import SideNav from "../components/common/SideNav";
+import PersonTable from "../components/tables/PersonTable";
+import TableHeader from "../components/common/TableHeader";
+import ChangePasswordDialog from "../components/dialogs/ChangePasswordDialog";
+import CreateStudentDialog from "../components/dialogs/CreateStudentDialog";
+import Notification from "../components/common/Notification";
 import '../styles/theme.css'
 import '../styles/common.css'
 
@@ -12,10 +15,8 @@ function AlunosPage() {
     const toggleNav = () => {
         setOpen(prev => !prev);
     };
-
+    /*
     const [person, setPerson] = useState([]);
-    const [selectedPerson, setSelectedPerson] = useState(null);
-
     const fetchPersons = async () => {
         try {
             const res = await api.get("/Aluno/get");
@@ -28,37 +29,61 @@ function AlunosPage() {
     useEffect(() => {
         fetchPersons();
     }, []);
+    */
+
+    const [selectedItem, setSelectedItem] = useState(null);
 
     const handleDelete = async () => {
-        if (!selectedPerson){ 
+        if (!selectedItem){ 
             console.warn("Nenhum aluno selecionado para deletar.");
             return;}
 
         try {
-            console.log("Deletando aluno com ID:", selectedPerson);
-            await api.delete(`/Aluno/delete/${selectedPerson}`);
-            await fetchPersons();
-            setSelectedPerson(null);
+            console.log("Deletando aluno com ID:", selectedItem);
+            await api.delete(`/Aluno/delete/${selectedItem}`);
+            await fetchItems();
+            setSelectedItem(null);
         } catch (error) {
             console.error("Erro ao deletar aluno:", error);
         }
     };
 
-    /*const [person, setPerson] = useState([
+    const [items, setItems] = useState([
         { id: 1, nome: 'Samuel', idade: 22 },
         { id: 2, nome: 'João', idade: 20 },
         { id: 3, nome: 'Maria', idade: 21 },
-    ]);*/
+    ]);
+    const [itemsList, setItemsList] = useState(items);
+
+    const onSearch = (filter) => {
+        setItemsList(
+            items.filter(i => 
+                i.nome.toLowerCase().includes(filter.toLowerCase()) ||
+                i.idade.toString().includes(filter)
+            )
+        );
+    }
+
+    const [openPasswordDialog, setOpenPasswordDialog] = useState(false);
+    const [openCreateDialog, setOpenCreateDialog] = useState(false);
+    const [notification, setNotification] = useState(null);
+
     return (
     <>
         <Header onToggleNav={toggleNav}></Header>
         <div className="container">
             <SideNav pageIndex={5} open={open}></SideNav>
             <main>
-                <TableHeader pageName="Alunos" icon="people" selectedPerson={selectedPerson} onDelete={handleDelete}></TableHeader>
+                <TableHeader pageName="Alunos" icon="people" onDelete={handleDelete} onSearch={onSearch} onAdd={() => setOpenCreateDialog(true)}></TableHeader>
                 <div className="table-container">
-                    <PersonTable person={person} selectedPerson={selectedPerson} onSelect={setSelectedPerson}/> 
+                    <PersonTable 
+                        items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem} 
+                        openPasswordDialog={openPasswordDialog} setOpenPasswordDialog={setOpenPasswordDialog}
+                    />  
                 </div>
+                <ChangePasswordDialog onNotification={(n) =>setNotification(n)} open={openPasswordDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenPasswordDialog(false);}}/>
+                <CreateStudentDialog onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setOpenCreateDialog(false);}}/>
+                <Notification message={notification} />
             </main>
         </div>
     </>

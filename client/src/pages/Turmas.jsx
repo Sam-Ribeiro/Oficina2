@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
-import Header from "../components/Header";
-import SideNav from "../components/SideNav";
+import Header from "../components/common/Header";
+import SideNav from "../components/common/SideNav";
 import '../styles/theme.css'
 import '../styles/common.css'
 

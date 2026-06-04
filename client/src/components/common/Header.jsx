@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import '../styles/menu.css'
+import '../../styles/menu.css'
 function Header({ onToggleNav }) {
     const navigate = useNavigate();
 

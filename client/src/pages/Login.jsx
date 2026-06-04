@@ -3,7 +3,7 @@ import { api } from "../services/api";
 import '../styles/login.css'
 import '../styles/theme.css'
 import '../styles/common.css'
-import LoginButton from "../components/LoginButton";
+import LoginButton from "../components/common/LoginButton";
 import ellpinho from '../assets/ellpinho_v2.png'
 
 function LoginPage() {

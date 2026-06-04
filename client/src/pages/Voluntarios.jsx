@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
-import Header from "../components/Header";
-import SideNav from "../components/SideNav";
+import Header from "../components/common/Header";
+import SideNav from "../components/common/SideNav";
+import PersonTable from "../components/tables/PersonTable";
+import TableHeader from "../components/common/TableHeader";
+import ChangePasswordDialog from "../components/dialogs/ChangePasswordDialog";
 import '../styles/theme.css'
 import '../styles/common.css'
 
@@ -10,6 +13,56 @@ function VoluntariosPage() {
     const toggleNav = () => {
         setOpen(prev => !prev);
     };
+    /*
+    const [person, setPerson] = useState([]);
+    const fetchPersons = async () => {
+        try {
+            const res = await api.get("/Aluno/get");
+            setPerson(res.data);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    useEffect(() => {
+        fetchPersons();
+    }, []);
+    */
+
+    const [selectedItem, setSelectedItem] = useState(null);
+
+    const handleDelete = async () => {
+        if (!selectedItem){ 
+            console.warn("Nenhum aluno selecionado para deletar.");
+            return;}
+
+        try {
+            console.log("Deletando aluno com ID:", selectedItem);
+            await api.delete(`/Aluno/delete/${selectedItem}`);
+            await fetchItems();
+            setSelectedItem(null);
+        } catch (error) {
+            console.error("Erro ao deletar aluno:", error);
+        }
+    };
+
+    const [items, setItems] = useState([
+        { id: 1, nome: 'Samuel', idade: 22 },
+        { id: 2, nome: 'João', idade: 20 },
+        { id: 3, nome: 'Maria', idade: 21 },
+    ]);
+    const [itemsList, setItemsList] = useState(items);
+
+    const onSearch = (filter) => {
+        setItemsList(
+            items.filter(i => 
+                i.nome.toLowerCase().includes(filter.toLowerCase()) ||
+                i.idade.toString().includes(filter)
+            )
+        );
+    }
+
+    const [openPasswordDialog, setOpenPasswordDialog] = useState(false);
 
     return (
     <>
@@ -17,7 +70,14 @@ function VoluntariosPage() {
         <div className="container">
             <SideNav pageIndex={2} open={open}></SideNav>
             <main>
-                <h1>Voluntarios Page</h1>
+                <TableHeader pageName="Voluntários" icon="volunteer_activism" onDelete={handleDelete} onSearch={onSearch}></TableHeader>
+                <div className="table-container">
+                    <PersonTable 
+                        items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem} 
+                        openPasswordDialog={openPasswordDialog} setOpenPasswordDialog={setOpenPasswordDialog}
+                    /> 
+                </div>
+                <ChangePasswordDialog open={openPasswordDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenPasswordDialog(false);}}/>
             </main>
         </div>
     </>
