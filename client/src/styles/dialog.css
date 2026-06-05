@@ -159,3 +159,31 @@ label {
     background-color: var(--green2)!important;
     color: var(--white);
 }
+
+.actions-column{
+    width: 100px;
+
+}
+
+.actions-column button{
+    margin: 0px 2px;
+}
+
+.positive{
+    background-color: var(--green2) !important;
+}
+
+.negative{
+    background-color: var(--red1) !important;
+}
+
+.student-positive{
+    background-color: var(--green3) !important;
+}
+
+.attedance-table-container {
+    max-height: 500px;
+    overflow-y: auto;
+    background-color: var(--gray3);
+    border-radius: 10px;
+}

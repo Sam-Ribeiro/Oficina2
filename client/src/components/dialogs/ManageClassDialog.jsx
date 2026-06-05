@@ -1,5 +1,6 @@
 import { useState } from "react";
 import '../../styles/dialog.css'
+import AttedanceDialog from "./AttendanceDialog";
 
 function ManageClassDialog({ open, onClose, id, onNotification, classes }) {
 
@@ -7,6 +8,13 @@ function ManageClassDialog({ open, onClose, id, onNotification, classes }) {
         onNotification(null);
         onClose();
     }
+
+    const setNotification = (n) =>{
+        onNotification(n)
+    }
+
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [openAttendanceDialog, setOpenAttendanceDialog] = useState(false);
 
     if (!open) return null;
 
@@ -21,7 +29,13 @@ function ManageClassDialog({ open, onClose, id, onNotification, classes }) {
                     <ul className="classes-list">
                         {classes.length > 0 ? (
                             classes.map((c) => (
-                                <li key={c.id} className={c.status === "Concluído" ? "class-done" : ""} >{new Date(c.data).toLocaleDateString("pt-BR")}</li>
+                                <li 
+                                key={c.id} className={c.status === "Concluído" ? "class-done" : ""}
+                                onClick={ () => {console.log("aaaaaaa");  setSelectedItem(c.id); setOpenAttendanceDialog(true);}
+                                }
+                                >
+                                        {new Date(c.data).toLocaleDateString("pt-BR")}
+                                </li>
                             ))
                         ) : (
                             <p>Nenhuma aula cadastrada.</p>
@@ -32,6 +46,7 @@ function ManageClassDialog({ open, onClose, id, onNotification, classes }) {
                     </ul>
                 </div>
             </div>
+            <AttedanceDialog classes={classes} onNotification={(n) =>setNotification(n)} open={openAttendanceDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenAttendanceDialog(false);}}/>
         </div>
     );
 }
