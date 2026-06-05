@@ -77,5 +77,188 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.AulaController",
+    "Method": "CreateAula",
+    "RelativePath": "api/Aula/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "aula",
+        "Type": "server.Models.Aula",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.AulaController",
+    "Method": "GetAulas",
+    "RelativePath": "api/Aula/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.OficinaController",
+    "Method": "CreateOficina",
+    "RelativePath": "api/Oficina/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "oficina",
+        "Type": "server.Models.Oficina",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.OficinaController",
+    "Method": "GetOficinas",
+    "RelativePath": "api/Oficina/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.PresencaController",
+    "Method": "CreatePresenca",
+    "RelativePath": "api/Presenca/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "presenca",
+        "Type": "server.Models.Presenca",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.PresencaController",
+    "Method": "GetPresencas",
+    "RelativePath": "api/Presenca/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.TurmaController",
+    "Method": "CreateTurma",
+    "RelativePath": "api/Turma/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "turma",
+        "Type": "server.Models.Turma",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.TurmaController",
+    "Method": "GetTurmas",
+    "RelativePath": "api/Turma/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.VoluntarioController",
+    "Method": "CreateVoluntario",
+    "RelativePath": "api/Voluntario/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voluntario",
+        "Type": "server.Models.Voluntario",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.VoluntarioController",
+    "Method": "DeleteVoluntario",
+    "RelativePath": "api/Voluntario/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.VoluntarioController",
+    "Method": "GetVoluntarios",
+    "RelativePath": "api/Voluntario/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.VoluntarioController",
+    "Method": "GetVoluntarioById",
+    "RelativePath": "api/Voluntario/get/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Application.Controllers.VoluntarioController",
+    "Method": "UpdateVoluntario",
+    "RelativePath": "api/Voluntario/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "voluntario",
+        "Type": "server.Models.Voluntario",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

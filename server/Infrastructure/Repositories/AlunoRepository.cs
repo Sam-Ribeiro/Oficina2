@@ -1,65 +1,62 @@
-﻿using server.Infrastructure.Data;
-using server.Infrastructure.Repositories.Interfaces;
+﻿using server.Infrastructure.Repositories.Interfaces;
 using server.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace server.Infrastructure.Repositories
 {
     public class AlunoRepository : IAlunoRepository
     {
-        public InMemoryContext context;
+      
+        private readonly AppDbContext _context;
 
-        public AlunoRepository(InMemoryContext context)
+        public AlunoRepository(AppDbContext context)
         {
-            this.context = context;
-            context.LoadContexts();
+            _context = context;
         }
 
         public void AddAluno(Aluno aluno)
         {
-            context.LoadContexts();
-            context.alunos.Add(aluno);
-            context.SaveChanges();
+            _context.Alunos.Add(aluno);
+            _context.SaveChanges(); 
         }
 
         public void DeleteAluno(int id)
         {
-            context.LoadContexts();
-            var aluno = context.alunos.FirstOrDefault(a => a.Id == id);
+            var aluno = _context.Alunos.FirstOrDefault(a => a.Id == id);
 
-            if (aluno == null)
-                return;
-
-            context.alunos.Remove(aluno);
-            context.SaveChanges();
+            if (aluno != null)
+            {
+                _context.Alunos.Remove(aluno);
+                _context.SaveChanges();
+            }
         }
 
-        public Aluno? GetAlunoById(int id)
+        public Aluno GetAlunoById(int id)
         {
-            context.LoadContexts();
-            return context.alunos.FirstOrDefault(a => a.Id.Equals(id));
+            return _context.Alunos.FirstOrDefault(a => a.Id == id);
         }
 
-        public List<Aluno>? GetAlunos()
+        public List<Aluno> GetAlunos()
         {
-            context.LoadContexts();
-            return context.alunos;
+            
+            return _context.Alunos.ToList();
         }
 
         public void UpdateAluno(Aluno updatedAluno, int id)
         {
-            context.LoadContexts();
+            var aluno = _context.Alunos.FirstOrDefault(a => a.Id == id);
 
-            var aluno = context.alunos.FirstOrDefault(p => p.Id == id);
+            if (aluno != null)
+            {
+                aluno.Nome = updatedAluno.Nome;
+                aluno.Email = updatedAluno.Email;
+                aluno.CPF = updatedAluno.CPF;
+                aluno.Idade = updatedAluno.Idade;
 
-            if (aluno == null)
-                return;
-
-            aluno.Nome = updatedAluno.Nome;
-            aluno.Email = updatedAluno.Email;
-            aluno.CPF = updatedAluno.CPF;
-            aluno.Idade = updatedAluno.Idade;
-
-            context.SaveChanges();
+                _context.SaveChanges();
+            }
         }
     }
+
 }

@@ -1,11 +1,9 @@
-﻿namespace server.Models
+﻿using System.Collections.Generic;
+namespace server.Models
+
 {
-    public class Aluno
+    public class Aluno : Pessoa
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string CPF { get; set; }
-        public string Email { get; set; }
-        public int? Idade { get; set; }
+        public List<Turma> Turmas { get; set; } = new List<Turma>();
     }
 }
