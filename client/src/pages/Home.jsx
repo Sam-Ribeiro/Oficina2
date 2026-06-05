@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
-import Header from "../components/Header";
-import SideNav from "../components/SideNav";
+import Header from "../components/common/Header";
+import SideNav from "../components/common/SideNav";
 import '../styles/theme.css'
 import '../styles/common.css'
 
@@ -17,7 +17,7 @@ function HomePage() {
         <div className="container">
             <SideNav pageIndex={0} open={open}></SideNav>
             <main>
-                <h1>Home Page</h1>
+                <h1>Home</h1>
             </main>
         </div>
     </>

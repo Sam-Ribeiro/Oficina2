@@ -13,10 +13,11 @@ thead {
     background-color: var(--blue3) !important;
     color: var(--white);
 }
-th:first-child,
-td:first-child {
-    width: 60px;
+
+.center{
+    text-align: center;
 }
+
 th,td {
     padding: 6px 10px;
     text-align: left;
@@ -51,4 +52,12 @@ button {
     font-weight: bold;
     font-size: 1em;
     cursor: pointer;
+}
+
+.small-column {
+    width: 55px;
+}
+.date-column {
+    text-align: center;
+    width: 135px;
 }
