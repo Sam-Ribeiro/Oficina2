@@ -4,6 +4,8 @@ import Header from "../components/common/Header";
 import SideNav from "../components/common/SideNav";
 import WorkshopTable from "../components/tables/WorkshopTable";
 import TableHeader from "../components/common/TableHeader";
+import CreateWorkshopDialog from "../components/dialogs/CreateWorkshopDialog";
+import Notification from "../components/common/Notification";
 import '../styles/theme.css'
 import '../styles/common.css'
 
@@ -63,16 +65,24 @@ function OficinasPage() {
             )
         );
     }
+
+    const [openCreateDialog, setOpenCreateDialog] = useState(false);
+    const [notification, setNotification] = useState(null);
+
     return (
     <>
         <Header onToggleNav={toggleNav}></Header>
         <div className="container">
             <SideNav pageIndex={3} open={open}></SideNav>
             <main>
-                <TableHeader pageName="Oficinas" icon="library_books" onDelete={handleDelete} onSearch={onSearch}></TableHeader>
+                <TableHeader pageName="Oficinas" icon="library_books" onDelete={handleDelete} onSearch={onSearch} onAdd={()=> setOpenCreateDialog(true)}></TableHeader>
                 <div className="table-container">
                     <WorkshopTable items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem}/> 
                 </div>
+                <CreateWorkshopDialog 
+                    onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setOpenCreateDialog(false);}}
+                />
+                <Notification message={notification} />
             </main>
         </div>
     </>

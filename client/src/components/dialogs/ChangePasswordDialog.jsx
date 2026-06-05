@@ -28,32 +28,43 @@ function ChangePasswordDialog({ open, onClose, id, onNotification }) {
     return (
         <div className="dialog-overlay">
             <div className="dialog dialog-password">
-                <h2>Alterar Senha - {id}</h2>
+                <div className="dialog-header"><h2>Alterar Senha - {id}</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
+                <div className="input-group" id="actual-password">
+                    <label htmlFor="password">Senha atual</label>
+                    <input
+                        type="password"
+                        placeholder="Digite sua senha atual"
+                    />
+                    <span className="error-message">A senha atual não está correta!</span>
+                </div>
 
-                <input
-                    type="password"
-                    placeholder="Senha atual"
-                />
+                <div className="input-group" id="new-password">
+                    <label htmlFor="newPassword">Nova senha</label>
+                    <input
+                        type="password"
+                        placeholder="Digite sua nova senha"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                    />
+                    <span className="error-message">A nova senha deve ter pelo menos 6 caracteres!</span>
+                </div>
 
-                <input
-                    type="password"
-                    placeholder="Nova senha"
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
-                />
+                <div className="input-group" id="confirm-password">
+                    <label htmlFor="confirmPassword">Confirmar senha</label>
+                    <input
+                        type="password"
+                        placeholder="Digite novamente sua nova senha"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                    />
+                    <span className="error-message">As senhas não coincidem!</span>
+                </div>
 
-                <input
-                    type="password"
-                    placeholder="Confirmar senha"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                />
-
-                <button onClick={handleSave}>
+                <button onClick={handleSave} id="btnSave">
                     Salvar
                 </button>
 
-                <button onClick={handleClose} className="button-cancel">
+                <button onClick={handleClose} className="button-cancel" id="btnCancel">
                     Cancelar
                 </button>
             </div>

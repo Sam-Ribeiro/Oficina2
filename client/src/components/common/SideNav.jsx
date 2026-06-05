@@ -61,13 +61,16 @@ function SideNav({ pageIndex, open }) {
                         <span className="material-icons">people</span>
                     </Link>
                 </li>
-                <li>
+                {/* 
+                < li > 
                     <Link className={`${pageIndex === 6 ? "actual-page" : ""} 
                     ${user.role === "DEVELOPER" || user.role === "Aluno" ? "" : "none"}`} to="/minhas-oficinas">
                         Minhas Oficinas 
                         <span className="material-icons">library_books</span>
                     </Link>
-                </li>
+                </li >
+                */}
+
             </ul>
             <div className="placeholder"></div>
             <ul>

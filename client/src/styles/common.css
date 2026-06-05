@@ -21,6 +21,8 @@ main {
 
 .ellp {
   font-family: 'Sniglet', cursive;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .placeholder {
@@ -78,9 +80,10 @@ main {
 }
 
 .notification {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
-    align-self: center;
+    left: 50%;
+    transform: translateX(-50%);
 
     background-color: #323232;
     color: white;

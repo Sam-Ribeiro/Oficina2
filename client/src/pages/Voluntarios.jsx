@@ -5,6 +5,8 @@ import SideNav from "../components/common/SideNav";
 import PersonTable from "../components/tables/PersonTable";
 import TableHeader from "../components/common/TableHeader";
 import ChangePasswordDialog from "../components/dialogs/ChangePasswordDialog";
+import CreateVolunteerDialog from "../components/dialogs/CreateVolunteerDialog";
+import Notification from "../components/common/Notification";
 import '../styles/theme.css'
 import '../styles/common.css'
 
@@ -63,21 +65,24 @@ function VoluntariosPage() {
     }
 
     const [openPasswordDialog, setOpenPasswordDialog] = useState(false);
-
+    const [openCreateDialog, setOpenCreateDialog] = useState(false);
+    const [notification, setNotification] = useState(null);
     return (
     <>
         <Header onToggleNav={toggleNav}></Header>
         <div className="container">
             <SideNav pageIndex={2} open={open}></SideNav>
             <main>
-                <TableHeader pageName="Voluntários" icon="volunteer_activism" onDelete={handleDelete} onSearch={onSearch}></TableHeader>
+                <TableHeader pageName="Voluntários" icon="volunteer_activism" onDelete={handleDelete} onSearch={onSearch} onAdd={() => setOpenCreateDialog(true)}></TableHeader>
                 <div className="table-container">
                     <PersonTable 
                         items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem} 
                         openPasswordDialog={openPasswordDialog} setOpenPasswordDialog={setOpenPasswordDialog}
                     /> 
                 </div>
-                <ChangePasswordDialog open={openPasswordDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenPasswordDialog(false);}}/>
+                <ChangePasswordDialog onNotification={(n) =>setNotification(n)} open={openPasswordDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenPasswordDialog(false);}}/>
+                <CreateVolunteerDialog onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setOpenCreateDialog(false);}}/>
+                <Notification message={notification} />
             </main>
         </div>
     </>

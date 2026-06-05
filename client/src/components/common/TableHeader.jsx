@@ -25,6 +25,9 @@ function TableHeader( { pageName, icon, onDelete, onSearch, onAdd } ) {
                 <span className="material-icons">delete</span>
             </button>
 
+            <button>
+                <span className="material-icons">download</span>
+            </button>
         </div>
     );
 }

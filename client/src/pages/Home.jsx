@@ -17,7 +17,7 @@ function HomePage() {
         <div className="container">
             <SideNav pageIndex={0} open={open}></SideNav>
             <main>
-                <h1>Home Page</h1>
+                <h1>Home</h1>
             </main>
         </div>
     </>
