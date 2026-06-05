@@ -23,12 +23,30 @@ namespace server.Application.Controllers
         }
 
         [HttpGet("get")]
-        public IActionResult GetVoluntarios()
+        public IActionResult GetVoluntarios() => Ok(_repository.GetVoluntarios());
+
+        // --- MÉTODOS NOVOS DO CRUD ---
+
+        [HttpGet("get/{id}")]
+        public IActionResult GetVoluntarioById(int id)
         {
-            var voluntarios = _repository.GetVoluntarios();
-            return Ok(voluntarios);
+            var voluntario = _repository.GetVoluntarioById(id);
+            if (voluntario == null) return NotFound();
+            return Ok(voluntario);
         }
 
-       
+        [HttpPut("update/{id}")]
+        public IActionResult UpdateVoluntario([FromBody] Voluntario voluntario, int id)
+        {
+            _repository.UpdateVoluntario(voluntario, id);
+            return Ok(new { message = "Voluntário atualizado!" });
+        }
+
+        [HttpDelete("delete/{id}")]
+        public IActionResult DeleteVoluntario(int id)
+        {
+            _repository.DeleteVoluntario(id);
+            return Ok(new { message = "Voluntário deletado!" });
+        }
     }
 }

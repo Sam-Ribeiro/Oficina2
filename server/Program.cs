@@ -22,6 +22,8 @@ builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
 builder.Services.AddScoped<IVoluntarioRepository, VoluntarioRepository>();
 builder.Services.AddScoped<IOficinaRepository, OficinaRepository>();
 builder.Services.AddScoped<IAulaRepository, AulaRepository>();
+builder.Services.AddScoped<ITurmaRepository, TurmaRepository>();
+builder.Services.AddScoped<IPresencaRepository, PresencaRepository>();
 
 builder.Services.AddCors(options =>
 {
