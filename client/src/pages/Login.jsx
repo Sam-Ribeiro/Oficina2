@@ -11,9 +11,6 @@ function LoginPage() {
     const [password, setSenha] = useState('');
     return (
         <div className="login-page">
-            <div className="top-bg">
-                <img className= "ellpinho" src={ellpinho} alt="ellpinho" />
-            </div>
             <form className="login-container" 
             onSubmit={(e) => { e.preventDefault(); document.getElementById('login-btn').click();}}>
                 <h2>Login</h2>
@@ -34,12 +31,9 @@ function LoginPage() {
                 />
 
                 <LoginButton email={email} password={password} id="btnLogin" />
-                <span>
-                    Admin - Admin  |  Tutor - Tutor <br></br>
-                    Professor - Professor  |  Aluno - Aluno
-                </span>
+                
             </form>
-            <div className="bottom-bg"></div>
+            <div className="bottom-bg"> <img className= "ellpinho" src={ellpinho} alt="ellpinho" /></div>
         </div>
     )
 }

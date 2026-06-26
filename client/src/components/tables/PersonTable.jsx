@@ -3,7 +3,7 @@ import '../../styles/table.css'
 import { useState } from 'react';
 
 function PersonTable({ items, selectedItem, onSelect, setOpenPasswordDialog }) {
-    
+    let user = JSON.parse(localStorage.getItem('user'));
     return (
         <table>
             <thead>
@@ -30,7 +30,8 @@ function PersonTable({ items, selectedItem, onSelect, setOpenPasswordDialog }) {
                             <td>{i.nome}</td>
                             <td>{i.idade}</td>
                             <td className='small-column center'>
-                                <button className="material-icons" 
+                                <button className={`material-icons
+                                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.id == i.id ? "" : "none"}`} 
                                     onClick={() => { onSelect(i.id); setOpenPasswordDialog(true);}}>
                                     key
                                 </button>

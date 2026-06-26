@@ -48,11 +48,29 @@ function AlunosPage() {
         }
     };
 
+    const editItem = function(){
+        const item = items.find(item => item.id === selectedItem);
+
+        if (!item) {
+            console.warn("Nenhum aluno selecionado");
+            return;
+        }
+
+        setSelectedItemEdit(item);
+        setOpenCreateDialog(true);
+    }
+
     const [items, setItems] = useState([
-        { id: 1, nome: 'Samuel', idade: 22 },
-        { id: 2, nome: 'João', idade: 20 },
-        { id: 3, nome: 'Maria', idade: 21 },
+        { id: 1, nome: 'Samuel', idade: 22, cpf: 20346452, email:'samuel@email.com' },
+        { id: 2, nome: 'João', idade: 20, cpf: 1111111, email:'João@email.com' },
+        { id: 3, nome: 'Maria', idade: 21, cpf: 2222222, email:'Maria@email.com' },
     ]);
+
+    const [selectedItemEdit, setSelectedItemEdit] = useState(
+        {
+            id:'', nome:'', idade:'', cpf:'',email:''
+        }
+    )
     const [itemsList, setItemsList] = useState(items);
 
     const onSearch = (filter) => {
@@ -62,6 +80,11 @@ function AlunosPage() {
                 i.idade.toString().includes(filter)
             )
         );
+    }
+
+    const onAdd = function(){
+        setSelectedItemEdit(null)
+        setOpenCreateDialog(true)
     }
 
     const [openPasswordDialog, setOpenPasswordDialog] = useState(false);
@@ -74,7 +97,7 @@ function AlunosPage() {
         <div className="container">
             <SideNav pageIndex={5} open={open}></SideNav>
             <main>
-                <TableHeader pageName="Alunos" icon="people" onDelete={handleDelete} onSearch={onSearch} onAdd={() => setOpenCreateDialog(true)}></TableHeader>
+                <TableHeader pageName="Alunos" icon="people" onDelete={handleDelete} onSearch={onSearch} onAdd={() => onAdd()} onEdit={()=> {editItem()}} ></TableHeader>
                 <div className="table-container">
                     <PersonTable 
                         items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem} 
@@ -82,7 +105,7 @@ function AlunosPage() {
                     />  
                 </div>
                 <ChangePasswordDialog onNotification={(n) =>setNotification(n)} open={openPasswordDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenPasswordDialog(false);}}/>
-                <CreateStudentDialog onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setOpenCreateDialog(false);}}/>
+                <CreateStudentDialog onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setSelectedItemEdit(null);setOpenCreateDialog(false);}} aluno={selectedItemEdit} />
                 <Notification message={notification} />
             </main>
         </div>

@@ -66,6 +66,24 @@ function OficinasPage() {
         );
     }
 
+    const [selectedItemEdit, setSelectedItemEdit] = useState(
+        {
+            id:'', nome:'', tema:'', descricao:'',
+        }
+    )
+
+    const editItem = function(){
+        const item = items.find(item => item.id === selectedItem);
+
+        if (!item) {
+            console.warn("Nenhum voluntario selecionado");
+            return;
+        }
+
+        setSelectedItemEdit(item);
+        setOpenCreateDialog(true);
+    }
+
     const [openCreateDialog, setOpenCreateDialog] = useState(false);
     const [notification, setNotification] = useState(null);
 
@@ -75,12 +93,12 @@ function OficinasPage() {
         <div className="container">
             <SideNav pageIndex={3} open={open}></SideNav>
             <main>
-                <TableHeader pageName="Oficinas" icon="library_books" onDelete={handleDelete} onSearch={onSearch} onAdd={()=> setOpenCreateDialog(true)}></TableHeader>
+                <TableHeader pageName="Oficinas" icon="library_books" onDelete={handleDelete} onSearch={onSearch} onAdd={()=> setOpenCreateDialog(true)} onEdit={()=> editItem()}></TableHeader>
                 <div className="table-container">
                     <WorkshopTable items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem}/> 
                 </div>
                 <CreateWorkshopDialog 
-                    onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setOpenCreateDialog(false);}}
+                    onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setSelectedItemEdit(null);setOpenCreateDialog(false);}} oficina={selectedItemEdit}
                 />
                 <Notification message={notification} />
             </main>

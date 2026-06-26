@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Select from "react-select";
 import "../../styles/dialog.css";
 
@@ -8,62 +8,83 @@ function CreateClassDialog({
     onNotification,
     workshops,
     students,
-    volunteers
+    volunteers,
+    turma
 }) {
-    const [name, setName] = useState("");
-
     const [selectedStudents, setSelectedStudents] = useState([]);
+    const [selectedWorkshop, setSelectedWorkshop] = useState(null);
+    const [selectedVolunteer, setSelectedVolunteer] = useState(null);
+    const [startDate, setStartDate] = useState("");
+    const [endDate, setEndDate] = useState("");
+
+    useEffect(() => {
+    if (!turma) return;
+        setSelectedWorkshop(
+            workshopOptions.find(w => w.value === turma.oficinaId) ?? null
+        );
+
+        setSelectedVolunteer(
+            volunteerOptions.find(v => v.value === turma.voluntarioId) ?? null
+        );
+
+        setSelectedStudents(
+            turma.alunos.map(aluno => ({
+                value: aluno.id,
+                label: aluno.nome
+            }))
+        );
+
+        setStartDate(turma.dataInicio);
+        setEndDate(turma.dataTermino);
+    }, [turma]);
+
     const studentOptions = students.map(student => ({
         value: student.id,
         label: student.nome
     }));
-
-    const [selectedWorkshop, setSelectedWorkshop] = useState(null);
+    
     const workshopOptions = workshops.map(workshop => ({
         value: workshop.id,
         label: workshop.nome
     }));
-
-    const [selectedVolunteer, setSelectedVolunteer] = useState(null);
+    
     const volunteerOptions = volunteers.map(volunteer => ({
         value: volunteer.id,
         label: volunteer.nome
     }));
 
-    const [startDate, setStartDate] = useState("");
-    const [endDate, setEndDate] = useState("");
 
     const handleSave = () => {
-        if (
-            !selectedWorkshop ||
-            !selectedVolunteer ||
-            !startDate ||
-            !endDate
-        ) {
+ 
+        if (!selectedWorkshop ||!selectedVolunteer ||!startDate ||!endDate) {
             onNotification("Preencha todos os campos obrigatórios.");
             return;
         }
-        if (startDate < minDate || startDate > maxDate) {
-            onNotification("Data de início inválida.");
+        if (startDate < minDate || startDate > maxDate || endDate < startDate || endDate > maxDate) {
+            onNotification("Data inválida.");
             return;
         }
 
-        if (endDate < startDate || endDate > maxDate) {
-            onNotification("Data final inválida.");
-            return;
-        }
-
-        const turma = {
+        const newClass = {
             oficinaId: selectedWorkshop?.value,
             voluntarioId: selectedVolunteer?.value,
             alunos: selectedStudents.map(student => student.value),
             dataInicio: startDate,
-            dataFim: endDate
+            dataTermino: endDate
         };
 
-        console.log(turma);
+        console.log(newClass);
 
-        onNotification("Turma criada com sucesso!");
+        if(turma){
+            onNotification("Turma editada com sucesso!")
+            console.log("Turma editada")
+        }
+        else{
+            
+            onNotification("Turma criada com sucesso!")
+            console.log("Turma criada")
+        }
+
         handleClose();
     };
 
@@ -86,7 +107,7 @@ function CreateClassDialog({
     return (
         <div className="dialog-overlay">
             <div className="dialog dialog-register">
-                <div className="dialog-header"><h2>Cadastrar Turma</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
+                <div className="dialog-header"><h2>{turma?.id ? "Editar Turma" : "Cadastrar Turma"}</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
                 <div className="input-group">
                     <label>Oficina</label>
 
@@ -98,8 +119,6 @@ function CreateClassDialog({
                         isClearable
                     />
                 </div>
-
-                
 
                 <div className="input-group-date">
                     <div className="input-group">
@@ -126,7 +145,7 @@ function CreateClassDialog({
                         />
                     </div>
                     <div className="input-group">
-                        <label>Data de Fim</label>
+                        <label>Data de Término</label>
                         <input
                             id="endDate"
                             type="date"

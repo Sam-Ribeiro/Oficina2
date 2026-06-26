@@ -49,10 +49,11 @@ function VoluntariosPage() {
     };
 
     const [items, setItems] = useState([
-        { id: 1, nome: 'Samuel', idade: 22 },
-        { id: 2, nome: 'João', idade: 20 },
-        { id: 3, nome: 'Maria', idade: 21 },
+        { id: 1, nome: 'Samuel', cpf:12345, idade: 21, ra: 1255, curso:'Curso 1' },
+        { id: 2, nome: 'João', cpf:44455, idade: 27, ra: 6634, curso:'Curso 3' },
+        { id: 3, nome: 'Maria', cpf:77777, idade: 23, ra: 7734, curso:'Curso C'  },
     ]);
+
     const [itemsList, setItemsList] = useState(items);
 
     const onSearch = (filter) => {
@@ -62,6 +63,23 @@ function VoluntariosPage() {
                 i.idade.toString().includes(filter)
             )
         );
+    }
+    const [selectedItemEdit, setSelectedItemEdit] = useState(
+        {
+            id:'', nome:'', idade:'', cpf:'',email:'',
+        }
+    )
+
+    const editItem = function(){
+        const item = items.find(item => item.id === selectedItem);
+
+        if (!item) {
+            console.warn("Nenhum voluntario selecionado");
+            return;
+        }
+
+        setSelectedItemEdit(item);
+        setOpenCreateDialog(true);
     }
 
     const [openPasswordDialog, setOpenPasswordDialog] = useState(false);
@@ -73,15 +91,15 @@ function VoluntariosPage() {
         <div className="container">
             <SideNav pageIndex={2} open={open}></SideNav>
             <main>
-                <TableHeader pageName="Voluntários" icon="volunteer_activism" onDelete={handleDelete} onSearch={onSearch} onAdd={() => setOpenCreateDialog(true)}></TableHeader>
+                <TableHeader pageName="Voluntários" icon="volunteer_activism" onDelete={handleDelete} onSearch={onSearch} onAdd={() => setOpenCreateDialog(true)} onEdit={()=> editItem()}></TableHeader>
                 <div className="table-container">
                     <PersonTable 
                         items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem} 
                         openPasswordDialog={openPasswordDialog} setOpenPasswordDialog={setOpenPasswordDialog}
                     /> 
                 </div>
-                <ChangePasswordDialog onNotification={(n) =>setNotification(n)} open={openPasswordDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenPasswordDialog(false);}}/>
-                <CreateVolunteerDialog onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setOpenCreateDialog(false);}}/>
+                <ChangePasswordDialog onNotification={(n) =>setNotification(n)} open={openPasswordDialog} id={selectedItem} onClose={() => {setSelectedItemEdit(null);setOpenCreateDialog(false);}}/>
+                <CreateVolunteerDialog onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setOpenCreateDialog(false);}} voluntario={selectedItemEdit}/>
                 <Notification message={notification} />
             </main>
         </div>

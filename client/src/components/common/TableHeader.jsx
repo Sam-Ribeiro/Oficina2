@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function TableHeader( { pageName, icon, onDelete, onSearch, onAdd } ) {
+function TableHeader( { pageName, icon, onDelete, onSearch, onAdd, onEdit } ) {
 
     const[filter, setFilter] = useState("");
 
@@ -17,7 +17,7 @@ function TableHeader( { pageName, icon, onDelete, onSearch, onAdd } ) {
                 <span className="material-icons">search</span>
             </button>
 
-            <button>
+            <button onClick={onEdit}>
                 <span className="material-icons">edit</span>
             </button>
 

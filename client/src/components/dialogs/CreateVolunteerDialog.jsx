@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../../styles/dialog.css';
 
-function CreateVolunteerDialog({ open, onClose, onNotification }) {
+function CreateVolunteerDialog({ open, onClose, onNotification, voluntario }) {
     const [nome, setNome] = useState("");
     const [cpf, setCpf] = useState("");
     const [email, setEmail] = useState("");
@@ -9,9 +9,29 @@ function CreateVolunteerDialog({ open, onClose, onNotification }) {
     const [ra, setRa] = useState("");
     const [curso, setCurso] = useState("");
 
-    const handleSave = () => {
-        onNotification("Voluntário cadastrado com sucesso!");
+    useEffect(() => {
+        if (voluntario) {
+            setNome(voluntario.nome || "");
+            setCpf(voluntario.cpf || "");
+            setEmail(voluntario.email || "");
+            setIdade(voluntario.idade || "");
+            setRa(voluntario.ra || "");
+            setCurso(voluntario.curso || "");
+        }
+    }, [voluntario]);
 
+    const handleSave = () => {
+        if(voluntario){
+            onNotification("Voluntário editado com sucesso!");
+        }
+        else{
+            onNotification("Voluntário cadastrado com sucesso!");
+        }
+
+        handleClose();
+    };
+
+    const handleClose = () => {
         setNome("");
         setCpf("");
         setEmail("");
@@ -27,7 +47,7 @@ function CreateVolunteerDialog({ open, onClose, onNotification }) {
     return (
         <div className="dialog-overlay">
             <div className="dialog dialog-register">
-                <div className="dialog-header"><h2>Cadastrar Voluntário</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
+                <div className="dialog-header"><h2>{voluntario?.id ? "Editar Voluntário" : "Cadastrar Voluntário"}</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
                 <div className="input-group">
                     <label htmlFor="nome">Nome</label>
                     <input
@@ -98,7 +118,7 @@ function CreateVolunteerDialog({ open, onClose, onNotification }) {
                     Salvar
                 </button>
 
-                <button onClick={onClose} className="button-cancel" id="btnCancel">
+                <button onClick={handleClose} className="button-cancel" id="btnCancel">
                     Cancelar
                 </button>
             </div>

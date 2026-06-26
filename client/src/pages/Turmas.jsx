@@ -49,12 +49,15 @@ function TurmasPage() {
     };
 
     const [items, setItem] = useState([
-        { id: 1, oficina: 'Robótica', dataInicio: '2026-01-01', dataTermino: '2026-06-01', status: 'Ativa', responsavel: 'Samuel' },
-        { id: 2, oficina: 'Pintura', dataInicio: '2026-02-01', dataTermino: '2026-07-01', status: 'Ativa', responsavel: 'Nicoly' },
-        { id: 3, oficina: 'Culinária', dataInicio: '2026-03-01', dataTermino: '2026-08-01', status: 'Inativa', responsavel: 'João' },
-        { id: 4, oficina: 'Fotografia', dataInicio: '2026-04-01', dataTermino: '2026-09-01', status: 'Ativa', responsavel: 'Ana' },
-        { id: 5, oficina: 'Programação', dataInicio: '2026-05-01', dataTermino: '2026-10-01', status: 'Inativa', responsavel: 'Carlos' },
-        { id: 6, oficina: 'Robótica', dataInicio: '2026-06-01', dataTermino: '2026-11-01', status: 'Ativa', responsavel: 'Mariana' },
+        { id: 1, oficinaId: 1, oficina: 'Robótica', dataInicio: '2026-01-01', dataTermino: '2026-06-01', status: 'Ativa', responsavel: 'Samuel', voluntarioId: 1,
+            alunos:  [{id:1, nome: "Claudinho"}, {id:3, nome: "Teste"}]
+         },
+        { id: 2, oficinaId: 2, oficina: 'Pintura', dataInicio: '2026-02-01', dataTermino: '2026-07-01', status: 'Ativa', responsavel: 'Nicoly', voluntarioId: 2,
+            alunos:  [{id:2, nome:"Renato"}]
+         },
+        { id: 3, oficinaId: 1, oficina: 'Robótica', dataInicio: '2026-06-01', dataTermino: '2026-11-01', status: 'Ativa', responsavel: 'Mariana', voluntarioId: 3,
+            alunos:  [{id:2, nome:"Renato"}, {id:3, nome: "Teste"}, ]
+         },
     ]);
 
     const [workshops, setWorkshops] = useState([
@@ -81,19 +84,6 @@ function TurmasPage() {
         { id: 1, data: '2026-01-15', conteudo: 'Introdução à Robótica', status: 'Concluído' },
         { id: 2, data: '2026-01-22', conteudo: 'Montagem de Circuitos', status: 'Pendente' },
         { id: 3, data: '2026-01-29', conteudo: 'Programação de Robôs', status: 'Pendente' },
-        { id: 4, data: '2026-02-05', conteudo: 'Desafios de Robótica', status: 'Pendente' },
-        { id: 5, data: '2026-02-12', conteudo: 'Projetos de Robótica', status: 'Pendente' },
-        { id: 6, data: '2026-02-19', conteudo: 'Apresentação de Projetos', status: 'Pendente' },
-        { id: 7, data: '2026-02-26', conteudo: 'Encerramento do Curso', status: 'Pendente' },
-        { id: 8, data: '2026-03-05', conteudo: 'Aula Extra de Robótica', status: 'Pendente' },
-        { id: 9, data: '2026-03-12', conteudo: 'Aula Extra de Robótica', status: 'Pendente' },
-        { id: 10, data: '2026-03-19', conteudo: 'Aula Extra de Robótica', status: 'Pendente' },
-        { id: 11, data: '2026-03-26', conteudo: 'Aula Extra de Robótica', status: 'Pendente' },
-        { id: 12, data: '2026-04-02', conteudo: 'Aula Extra de Robótica', status: 'Pendente' },
-        { id: 13, data: '2026-04-09', conteudo: 'Aula Extra de Robótica', status: 'Pendente' },
-        { id: 14, data: '2026-04-16', conteudo: 'Aula Extra de Robótica', status: 'Pendente' },
-        { id: 15, data: '2026-04-23', conteudo: 'Aula Extra de Robótica', status: 'Pendente' },
-        { id: 16, data: '2026-04-30', conteudo: 'Aula Extra de Robótica', status: 'Pendente' },
     ]);
 
     const [itemsList, setItemsList] = useState(items);
@@ -105,6 +95,25 @@ function TurmasPage() {
             )
         );
     }
+
+    const [selectedItemEdit, setSelectedItemEdit] = useState(
+        {
+            id: "", alunos: [],dataTermino: "",dataInicio: "",oficinaId: "",voluntarioId: "", status: "",
+        }
+    )
+
+    const editItem = function(){
+       
+        const item = items.find(item => item.id === selectedItem);
+
+        if (!item) {
+            console.warn("Nenhum voluntario selecionado");
+            return;
+        }
+        setSelectedItemEdit(item);
+        setOpenCreateDialog(true);
+    }
+
     const [openCreateDialog, setOpenCreateDialog] = useState(false);
     const [openManageDialog, setOpenManageDialog] = useState(false);
     const [notification, setNotification] = useState(null);
@@ -114,13 +123,13 @@ function TurmasPage() {
         <div className="container">
             <SideNav pageIndex={4} open={open}></SideNav>
             <main>
-                <TableHeader pageName="Turmas" icon="class" onSearch={onSearch} onDelete={handleDelete} onAdd={() => setOpenCreateDialog(true)}></TableHeader>
+                <TableHeader pageName="Turmas" icon="class" onSearch={onSearch} onDelete={handleDelete} onAdd={() => setOpenCreateDialog(true)} onEdit={()=> editItem()}></TableHeader>
                 <div className="table-container">
                     <ClassTable items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem} setOpenManageDialog={setOpenManageDialog}></ClassTable>
                 </div>
                 <CreateClassDialog 
-                    onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setOpenCreateDialog(false);}}
-                    workshops={workshops} students={students} volunteers={volunteers}
+                    onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setSelectedItemEdit(null);setOpenCreateDialog(false);}}
+                    workshops={workshops} students={students} volunteers={volunteers} turma={selectedItemEdit}
                 />
                 <ManageClassDialog classes={classes} onNotification={(n) =>setNotification(n)} open={openManageDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenManageDialog(false);}}/>
                 <Notification message={notification} />

@@ -12,7 +12,8 @@ function LoginButton( { email, password, id }) {
             if (email === password) {
             user = {
                 name: `Usuário ${email}`,
-                role: `${email}`
+                role: `${email}`,
+                id: `2`
             };
         }
         localStorage.setItem('auth', 'true');

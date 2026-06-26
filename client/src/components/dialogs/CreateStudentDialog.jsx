@@ -1,15 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../../styles/dialog.css';
 
-function CreateStudentDialog({ open, onClose, onNotification }) {
+function CreateStudentDialog({ open, onClose, onNotification, aluno }) {
+
+
     const [nome, setNome] = useState("");
     const [cpf, setCpf] = useState("");
     const [email, setEmail] = useState("");
     const [idade, setIdade] = useState("");
 
-    const handleSave = () => {
-        onNotification("Aluno cadastrado com sucesso!");
+    useEffect(() => {
+        if (aluno) {
+            console.log(aluno)
+            setNome(aluno.nome || "");
+            setCpf(aluno.cpf || "");
+            setEmail(aluno.email || "");
+            setIdade(aluno.idade || "");
+        }
+    }, [aluno]);
 
+    const handleSave = () => {
+        if(aluno){
+            onNotification("Aluno editado com sucesso!");
+        }
+        else{
+            onNotification("Aluno cadastrado com sucesso!");
+        }
+        handleClose();
+    };
+
+    const handleClose = () => {
         setNome("");
         setCpf("");
         setEmail("");
@@ -23,7 +43,7 @@ function CreateStudentDialog({ open, onClose, onNotification }) {
     return (
         <div className="dialog-overlay">
             <div className="dialog dialog-register">
-                <div className="dialog-header"><h2>Cadastrar Aluno</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
+                <div className="dialog-header"><h2>{aluno?.id ? "Editar Aluno" : "Cadastrar Aluno"}</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
                 <div className="input-group">
                     <label htmlFor="nome">Nome</label>
                     <input
@@ -73,7 +93,7 @@ function CreateStudentDialog({ open, onClose, onNotification }) {
                     Salvar
                 </button>
 
-                <button onClick={onClose} className="button-cancel" id="btnCancel">
+                <button onClick={handleClose} className="button-cancel" id="btnCancel">
                     Cancelar
                 </button>
             </div>

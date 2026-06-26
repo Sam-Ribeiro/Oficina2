@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../../styles/dialog.css";
 
-function CreateWorkshopDialog({
-    open,
-    onClose,
-    onNotification,
-}) {
+function CreateWorkshopDialog({open, onClose, onNotification, oficina}) {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [theme, setTheme] = useState("");
+
+
+    useEffect(() => {
+        if (oficina) {
+            setName(oficina.nome || "");
+            setDescription(oficina.descricao || "");
+            setTheme(oficina.tema || "");
+        }
+    }, [oficina]);
 
     const handleSave = () => {
         if (
@@ -20,15 +25,13 @@ function CreateWorkshopDialog({
             return;
         }
 
-        const workshop = {
-            nome: name,
-            descricao: description,
-            tema: theme
-        };
-
-        console.log(workshop);
-
-        onNotification("Oficina criada com sucesso!");
+        if(oficina){
+            onNotification("Oficina editada com sucesso!");
+        }
+        else{
+            onNotification("Oficina cadastrada com sucesso!");
+        }
+        
         handleClose();
     };
 
@@ -45,7 +48,7 @@ function CreateWorkshopDialog({
     return (
         <div className="dialog-overlay">
             <div className="dialog dialog-register">
-                <div className="dialog-header"><h2>Cadastrar Oficina</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
+                <div className="dialog-header"><h2>{oficina?.id ? "Editar Oficina" : "Cadastrar Oficina"}</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
                 <div className="input-group">
                     <label>Nome da Oficina</label>
                     <input
