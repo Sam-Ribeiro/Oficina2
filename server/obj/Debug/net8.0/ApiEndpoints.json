@@ -121,6 +121,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "server.Application.Controllers.CertificadoController",
+    "Method": "GerarCertificado",
+    "RelativePath": "api/Certificado/gerar/{alunoId}/{turmaId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "alunoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "turmaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "server.Application.Controllers.OficinaController",
     "Method": "CreateOficina",
     "RelativePath": "api/Oficina/create",

@@ -1,37 +1,49 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\",
+  "WorkspaceRootPath": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\script\\projeto oficina de integra\u00E7\u00E3o 2\\oficina2\\server\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\services\\certificadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:services\\certificadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\script\\projeto oficina de integra\u00E7\u00E3o 2\\oficina2\\server\\infrastructure\\repositories\\voluntariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:infrastructure\\repositories\\voluntariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\turma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\turma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\script\\projeto oficina de integra\u00E7\u00E3o 2\\oficina2\\server\\infrastructure\\repositories\\alunorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:infrastructure\\repositories\\alunorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\application\\controllers\\certificadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\certificadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\script\\projeto oficina de integra\u00E7\u00E3o 2\\oficina2\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\script\\projeto oficina de integra\u00E7\u00E3o 2\\oficina2\\server\\models\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\infrastructure\\repositories\\voluntariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:infrastructure\\repositories\\voluntariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\script\\projeto oficina de integra\u00E7\u00E3o 2\\oficina2\\server\\application\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\infrastructure\\repositories\\alunorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:infrastructure\\repositories\\alunorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\script\\projeto oficina de integra\u00E7\u00E3o 2\\oficina2\\server\\migrations\\20260624020306_atualizandopessoajwt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\migrations\\20260624020306_atualizandopessoajwt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:migrations\\20260624020306_atualizandopessoajwt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\script\\projeto oficina de integra\u00E7\u00E3o 2\\oficina2\\server\\server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\application\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
@@ -42,15 +54,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -63,23 +71,61 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "VoluntarioRepository.cs",
-              "DocumentMoniker": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Infrastructure\\Repositories\\VoluntarioRepository.cs",
-              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\VoluntarioRepository.cs",
-              "ToolTip": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Infrastructure\\Repositories\\VoluntarioRepository.cs",
-              "RelativeToolTip": "Infrastructure\\Repositories\\VoluntarioRepository.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Title": "Turma.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Turma.cs",
+              "RelativeDocumentMoniker": "Models\\Turma.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Turma.cs",
+              "RelativeToolTip": "Models\\Turma.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T22:39:58.9Z",
+              "WhenOpened": "2026-06-27T22:06:38.263Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
+              "Title": "CertificadoController.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\CertificadoController.cs",
+              "RelativeDocumentMoniker": "Application\\Controllers\\CertificadoController.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\CertificadoController.cs",
+              "RelativeToolTip": "Application\\Controllers\\CertificadoController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAwDMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-27T15:34:58.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CertificadoService.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Services\\CertificadoService.cs",
+              "RelativeDocumentMoniker": "Services\\CertificadoService.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Services\\CertificadoService.cs",
+              "RelativeToolTip": "Services\\CertificadoService.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAuwEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-27T15:30:29.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "VoluntarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Infrastructure\\Repositories\\VoluntarioRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\VoluntarioRepository.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Infrastructure\\Repositories\\VoluntarioRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\VoluntarioRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T22:39:58.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Pessoa.cs",
-              "DocumentMoniker": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Models\\Pessoa.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Pessoa.cs",
               "RelativeDocumentMoniker": "Models\\Pessoa.cs",
-              "ToolTip": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Models\\Pessoa.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Pessoa.cs",
               "RelativeToolTip": "Models\\Pessoa.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -87,24 +133,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "AlunoRepository.cs",
-              "DocumentMoniker": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Infrastructure\\Repositories\\AlunoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Infrastructure\\Repositories\\AlunoRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\AlunoRepository.cs",
-              "ToolTip": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Infrastructure\\Repositories\\AlunoRepository.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Infrastructure\\Repositories\\AlunoRepository.cs",
               "RelativeToolTip": "Infrastructure\\Repositories\\AlunoRepository.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAAACsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-26T22:36:49.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-26T22:36:49.351Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "20260624020306_AtualizandoPessoaJWT.cs",
-              "DocumentMoniker": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Migrations\\20260624020306_AtualizandoPessoaJWT.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Migrations\\20260624020306_AtualizandoPessoaJWT.cs",
               "RelativeDocumentMoniker": "Migrations\\20260624020306_AtualizandoPessoaJWT.cs",
-              "ToolTip": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Migrations\\20260624020306_AtualizandoPessoaJWT.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Migrations\\20260624020306_AtualizandoPessoaJWT.cs",
               "RelativeToolTip": "Migrations\\20260624020306_AtualizandoPessoaJWT.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -114,22 +159,22 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Program.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAE4AAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-24T01:57:24.873Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Application\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Application\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Application\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Application\\Controllers\\AuthController.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAwwDUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -137,24 +182,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "TokenService.cs",
-              "DocumentMoniker": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Services\\TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "Services\\TokenService.cs",
-              "ToolTip": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Services\\TokenService.cs",
               "RelativeToolTip": "Services\\TokenService.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAmwBoAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-24T01:54:39.232Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "server.csproj",
-              "DocumentMoniker": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\server.csproj",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\server.csproj",
               "RelativeDocumentMoniker": "server.csproj",
-              "ToolTip": "C:\\script\\Projeto oficina de integra\u00E7\u00E3o 2\\Oficina2\\server\\server.csproj",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\server.csproj",
               "RelativeToolTip": "server.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",

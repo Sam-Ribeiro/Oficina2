@@ -6,6 +6,7 @@ using server.Infrastructure.Repositories;
 using server.Infrastructure.Repositories.Interfaces;
 using server.Services;
 using System.Text;
+QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,7 @@ builder.Services.AddScoped<IOficinaRepository, OficinaRepository>();
 builder.Services.AddScoped<IAulaRepository, AulaRepository>();
 builder.Services.AddScoped<ITurmaRepository, TurmaRepository>();
 builder.Services.AddScoped<IPresencaRepository, PresencaRepository>();
+builder.Services.AddScoped<CertificadoService>();
 
 builder.Services.AddScoped<TokenService>();
 
