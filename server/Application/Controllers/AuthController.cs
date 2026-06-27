@@ -30,12 +30,12 @@ namespace server.Application.Controllers
         public IActionResult Login([FromBody] LoginDto loginDto)
         {
             
-            Pessoa pessoa = _context.Alunos.FirstOrDefault(p => p.Login == loginDto.Login && p.Senha == loginDto.Senha);
+            Pessoa pessoa = _context.Alunos.FirstOrDefault(p => p.Email == loginDto.Login && p.Senha == loginDto.Senha);
 
             
             if (pessoa == null)
             {
-                pessoa = _context.Voluntarios.FirstOrDefault(p => p.Login == loginDto.Login && p.Senha == loginDto.Senha);
+                pessoa = _context.Voluntarios.FirstOrDefault(p => p.Email == loginDto.Login && p.Senha == loginDto.Senha);
             }
 
             
@@ -50,7 +50,7 @@ namespace server.Application.Controllers
            
             return Ok(new
             {
-                usuario = new { pessoa.Id, pessoa.Nome, pessoa.Login, pessoa.Role },
+                usuario = new { pessoa.Id, pessoa.Nome, pessoa.Email, pessoa.Role },
                 token = token
             });
         }

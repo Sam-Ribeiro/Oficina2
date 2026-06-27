@@ -21,11 +21,12 @@ namespace server.Services
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.Name, pessoa.Login),
+                    new Claim(ClaimTypes.Name, pessoa.Email),
                     new Claim(ClaimTypes.Role, pessoa.Role), 
-                    new Claim("Id", pessoa.Id.ToString())
+                    new Claim("Id", pessoa.Id.ToString()),
+                    new Claim("Nome", pessoa.Nome),
                 }),
-                Expires = DateTime.UtcNow.AddHours(2), 
+                Expires = DateTime.UtcNow.AddHours(12), 
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 

@@ -17,6 +17,7 @@ namespace server.Infrastructure.Repositories
 
         public void AddAluno(Aluno aluno)
         {
+            aluno.Role = "Aluno";
             _context.Alunos.Add(aluno);
             _context.SaveChanges(); 
         }

@@ -16,6 +16,7 @@ namespace server.Infrastructure.Repositories
 
         public void AddVoluntario(Voluntario voluntario)
         {
+            voluntario.Role = "Voluntario";
             _context.Voluntarios.Add(voluntario);
             _context.SaveChanges();
         }

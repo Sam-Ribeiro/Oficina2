@@ -1,9 +1,12 @@
 
 import '../../styles/table.css'
 import { useState } from 'react';
+import { jwtDecode } from "jwt-decode";
 
 function PersonTable({ items, selectedItem, onSelect, setOpenPasswordDialog }) {
-    let user = JSON.parse(localStorage.getItem('user'));
+    const token = localStorage.getItem("token");
+
+    const user = jwtDecode(token);
     return (
         <table>
             <thead>

@@ -488,15 +488,11 @@
             "type": "string",
             "nullable": true
           },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
           "idade": {
             "type": "integer",
             "format": "int32"
           },
-          "login": {
+          "email": {
             "type": "string",
             "nullable": true
           },
@@ -678,15 +674,11 @@
             "type": "string",
             "nullable": true
           },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
           "idade": {
             "type": "integer",
             "format": "int32"
           },
-          "login": {
+          "email": {
             "type": "string",
             "nullable": true
           },

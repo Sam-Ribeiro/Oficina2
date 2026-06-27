@@ -1,21 +1,24 @@
 import { useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import '../../styles/menu.css'
+import { jwtDecode } from "jwt-decode";
 
 function SideNav({ pageIndex, open }) {
     const navigate = useNavigate();
     function handleLogoff() {
         localStorage.removeItem('auth');
-        localStorage.removeItem('user');
+        localStorage.removeItem('token');
         navigate('/login');
     }
-    let user = JSON.parse(localStorage.getItem('user'));
+    const token = localStorage.getItem("token");
+
+    const user = jwtDecode(token);
     return (
         <nav className={`side-nav ${open ? '' : 'hidden'}`}>
             <ul>
                 <li>
                     <Link className={`${pageIndex === 0 ? "actual-page" : ""} 
-                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Aluno" || user.role === "Tutor" ? "" : "none"}`}
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Aluno" || user.role === "Voluntario" ? "" : "none"}`}
                      to="/home">
                         Home 
                         <span className="material-icons">home</span>
@@ -23,7 +26,7 @@ function SideNav({ pageIndex, open }) {
                 </li>
                 <li>
                     <Link className={`${pageIndex === 1 ? "actual-page" : ""} 
-                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Tutor" ? "" : "none"}`} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Voluntario" ? "" : "none"}`} 
                     to="/minhas-turmas">
                         Minhas Turmas 
                         <span className="material-icons">groups</span>
@@ -31,7 +34,7 @@ function SideNav({ pageIndex, open }) {
                 </li>
                 <li>
                     <Link className={`${pageIndex === 2 ? "actual-page" : ""} 
-                    ${user.role === "DEVELOPER" || user.role === "Admin" ? "" : "none"}`} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Voluntario" ? "" : "none"}`} 
                     to="/voluntarios">
                         Voluntários 
                         <span className="material-icons">volunteer_activism</span>
@@ -39,7 +42,7 @@ function SideNav({ pageIndex, open }) {
                 </li>
                 <li>
                     <Link className={`${pageIndex === 3 ? "actual-page" : ""} 
-                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Tutor" ? "" : "none"}`} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Voluntario" ? "" : "none"}`} 
                     to="/oficinas">
                         Oficinas 
                         <span className="material-icons">library_books</span>
@@ -47,7 +50,7 @@ function SideNav({ pageIndex, open }) {
                 </li>
                 <li>
                     <Link className={`${pageIndex === 4 ? "actual-page" : ""} 
-                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Tutor" ? "" : "none"}`} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Voluntario" ? "" : "none"}`} 
                     to="/turmas">
                         Turmas 
                         <span className="material-icons">class</span>
@@ -55,7 +58,7 @@ function SideNav({ pageIndex, open }) {
                 </li>
                 <li>
                     <Link className={`${pageIndex === 5 ? "actual-page" : ""} 
-                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Tutor" ? "" : "none"}`} 
+                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Voluntario" ? "" : "none"}`} 
                     to="/alunos">
                         Alunos 
                         <span className="material-icons">people</span>
