@@ -129,6 +129,7 @@ label {
     min-width: 100px;
     max-width: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
@@ -141,7 +142,13 @@ label {
     justify-content: center;
 }
 
-.classes-list li:hover {
+.classes-list li:hover:not(:has(input:hover)) {
+    border-color: var(--blue3);
+    background-color: var(--blueEllp);
+    color: var(--white);
+}
+
+.classes-list li input:hover {
     border-color: var(--blue3);
     background-color: var(--blueEllp);
     color: var(--white);

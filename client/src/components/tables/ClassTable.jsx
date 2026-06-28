@@ -1,7 +1,7 @@
 
 import '../../styles/table.css'
 
-function ClassTable({ items, selectedItem, onSelect, setOpenManageDialog }) {
+function ClassTable({ items, selectedItem, onSelect, handleOpenManageDialog }) {
     return (
         <table>
             <thead>
@@ -28,14 +28,14 @@ function ClassTable({ items, selectedItem, onSelect, setOpenManageDialog }) {
                                 />
                             </td>
                             <td className='small-column'>{i.id}</td>
-                            <td>{i.oficina}</td>
+                            <td>{i.oficina.nome}</td>
                             <td>{i.status}</td>
-                            <td>{i.responsavel}</td>
+                            <td>{i.voluntarioId}</td>
                             <td className='date-column'>{new Date(i.dataInicio).toLocaleDateString("pt-BR")}</td>
                             <td className='date-column'>{new Date(i.dataTermino).toLocaleDateString("pt-BR")}</td>
                             <td className='small-column center'>
                                 <button className="material-icons" 
-                                    onClick={() => { onSelect(i.id); setOpenManageDialog(true);}}>
+                                    onClick={() => { onSelect(i.id); handleOpenManageDialog(i.id);}}>
                                     auto_stories
                                 </button>
                             </td>

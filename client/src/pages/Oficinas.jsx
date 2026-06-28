@@ -18,7 +18,7 @@ function OficinasPage() {
 
     const fetchItems = async () => {
         try {
-            const res = await api.get("/Oficina/get");
+            const res = await api.get("/Oficina");
             setItems(res.data);
         } catch (err) {
             console.error(err);
