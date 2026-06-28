@@ -136,6 +136,18 @@
         }
       }
     },
+    "/api/Aula": {
+      "get": {
+        "tags": [
+          "Aula"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Aula/create": {
       "post": {
         "tags": [
@@ -145,17 +157,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Aula"
+                "$ref": "#/components/schemas/AulaCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Aula"
+                "$ref": "#/components/schemas/AulaCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Aula"
+                "$ref": "#/components/schemas/AulaCreateDto"
               }
             }
           }
@@ -167,10 +179,63 @@
         }
       }
     },
-    "/api/Aula/get": {
-      "get": {
+    "/api/Aula/update/{id}": {
+      "put": {
         "tags": [
           "Aula"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AulaCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AulaCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AulaCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Aula/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Aula"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -242,6 +307,18 @@
         }
       }
     },
+    "/api/Oficina": {
+      "get": {
+        "tags": [
+          "Oficina"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Oficina/create": {
       "post": {
         "tags": [
@@ -251,17 +328,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Oficina"
+                "$ref": "#/components/schemas/OficinaCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Oficina"
+                "$ref": "#/components/schemas/OficinaCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Oficina"
+                "$ref": "#/components/schemas/OficinaCreateDto"
               }
             }
           }
@@ -273,10 +350,75 @@
         }
       }
     },
-    "/api/Oficina/get": {
-      "get": {
+    "/api/Oficina/update/{id}": {
+      "put": {
         "tags": [
           "Oficina"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OficinaCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OficinaCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OficinaCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Oficina/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Oficina"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Presenca": {
+      "get": {
+        "tags": [
+          "Presenca"
         ],
         "responses": {
           "200": {
@@ -294,17 +436,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Presenca"
+                "$ref": "#/components/schemas/PresencaCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Presenca"
+                "$ref": "#/components/schemas/PresencaCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Presenca"
+                "$ref": "#/components/schemas/PresencaCreateDto"
               }
             }
           }
@@ -316,10 +458,75 @@
         }
       }
     },
-    "/api/Presenca/get": {
-      "get": {
+    "/api/Presenca/update/{id}": {
+      "put": {
         "tags": [
           "Presenca"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresencaCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresencaCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PresencaCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Presenca/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Presenca"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Turma": {
+      "get": {
+        "tags": [
+          "Turma"
         ],
         "responses": {
           "200": {
@@ -337,17 +544,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Turma"
+                "$ref": "#/components/schemas/TurmaCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Turma"
+                "$ref": "#/components/schemas/TurmaCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Turma"
+                "$ref": "#/components/schemas/TurmaCreateDto"
               }
             }
           }
@@ -359,10 +566,86 @@
         }
       }
     },
-    "/api/Turma/get": {
+    "/api/Turma/update/{id}": {
+      "put": {
+        "tags": [
+          "Turma"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TurmaCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TurmaCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TurmaCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Turma/delete/{id}": {
+      "delete": {
+        "tags": [
+          "Turma"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Turma/TodosCertificados/{turmaId}": {
       "get": {
         "tags": [
           "Turma"
+        ],
+        "parameters": [
+          {
+            "name": "turmaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -546,13 +829,9 @@
         },
         "additionalProperties": false
       },
-      "Aula": {
+      "AulaCreateDto": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "tema": {
             "type": "string",
             "nullable": true
@@ -568,16 +847,6 @@
           "turmaId": {
             "type": "integer",
             "format": "int32"
-          },
-          "turma": {
-            "$ref": "#/components/schemas/Turma"
-          },
-          "presencas": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Presenca"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -614,29 +883,33 @@
         },
         "additionalProperties": false
       },
-      "Presenca": {
+      "OficinaCreateDto": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
+          "nome": {
+            "type": "string",
+            "nullable": true
           },
-          "presente": {
-            "type": "boolean"
-          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PresencaCreateDto": {
+        "type": "object",
+        "properties": {
           "aulaId": {
             "type": "integer",
             "format": "int32"
-          },
-          "aula": {
-            "$ref": "#/components/schemas/Aula"
           },
           "alunoId": {
             "type": "integer",
             "format": "int32"
           },
-          "aluno": {
-            "$ref": "#/components/schemas/Aluno"
+          "presente": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -678,6 +951,44 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Aluno"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TurmaCreateDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataInicio": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dataTermino": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "oficinaId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "voluntarioId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "alunosIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
             },
             "nullable": true
           }

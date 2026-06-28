@@ -3,24 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\services\\certificadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:services\\certificadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\turma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\turma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\application\\controllers\\turmacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\turmacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\application\\controllers\\certificadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\certificadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\application\\controllers\\aulacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\aulacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\application\\controllers\\presencacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\presencacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\presencacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\presencacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\aulacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\aulacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\presenca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\presenca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\aula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\aula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\application\\controllers\\oficinacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\oficinacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\oficinacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\oficinacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\turmacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\turmacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\services\\certificadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:services\\certificadoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\turma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\turma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\infrastructure\\repositories\\voluntariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,6 +79,10 @@
       "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
@@ -54,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -65,21 +105,125 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Aula.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Aula.cs",
+              "RelativeDocumentMoniker": "Models\\Aula.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Aula.cs",
+              "RelativeToolTip": "Models\\Aula.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:29:45.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PresencaController.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\PresencaController.cs",
+              "RelativeDocumentMoniker": "Application\\Controllers\\PresencaController.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\PresencaController.cs",
+              "RelativeToolTip": "Application\\Controllers\\PresencaController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAcwDgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:28:22.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PresencaCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\PresencaCreateDto.cs",
+              "RelativeDocumentMoniker": "Models\\PresencaCreateDto.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\PresencaCreateDto.cs",
+              "RelativeToolTip": "Models\\PresencaCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:28:05.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AulaController.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AulaController.cs",
+              "RelativeDocumentMoniker": "Application\\Controllers\\AulaController.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AulaController.cs",
+              "RelativeToolTip": "Application\\Controllers\\AulaController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAuwCsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:18:05.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OficinaController.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\OficinaController.cs",
+              "RelativeDocumentMoniker": "Application\\Controllers\\OficinaController.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\OficinaController.cs",
+              "RelativeToolTip": "Application\\Controllers\\OficinaController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA8wC8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:17:52.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AulaCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\AulaCreateDto.cs",
+              "RelativeDocumentMoniker": "Models\\AulaCreateDto.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\AulaCreateDto.cs",
+              "RelativeToolTip": "Models\\AulaCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:17:39.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OficinaCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\OficinaCreateDto.cs",
+              "RelativeDocumentMoniker": "Models\\OficinaCreateDto.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\OficinaCreateDto.cs",
+              "RelativeToolTip": "Models\\OficinaCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:17:16.061Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Turma.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Turma.cs",
-              "RelativeDocumentMoniker": "Models\\Turma.cs",
-              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Turma.cs",
-              "RelativeToolTip": "Models\\Turma.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Title": "TurmaController.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\TurmaController.cs",
+              "RelativeDocumentMoniker": "Application\\Controllers\\TurmaController.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\TurmaController.cs",
+              "RelativeToolTip": "Application\\Controllers\\TurmaController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAuwHYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-27T22:06:38.263Z",
+              "WhenOpened": "2026-06-28T14:08:34.274Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T01:57:24.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
@@ -89,27 +233,65 @@
               "RelativeDocumentMoniker": "Application\\Controllers\\CertificadoController.cs",
               "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\CertificadoController.cs",
               "RelativeToolTip": "Application\\Controllers\\CertificadoController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAwDMAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAuwDMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-27T15:34:58.29Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "Presenca.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Presenca.cs",
+              "RelativeDocumentMoniker": "Models\\Presenca.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Presenca.cs",
+              "RelativeToolTip": "Models\\Presenca.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:30:16.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TurmaCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\TurmaCreateDto.cs",
+              "RelativeDocumentMoniker": "Models\\TurmaCreateDto.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\TurmaCreateDto.cs",
+              "RelativeToolTip": "Models\\TurmaCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:08:18.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Turma.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Turma.cs",
+              "RelativeDocumentMoniker": "Models\\Turma.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Turma.cs",
+              "RelativeToolTip": "Models\\Turma.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-27T22:06:38.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "CertificadoService.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Services\\CertificadoService.cs",
               "RelativeDocumentMoniker": "Services\\CertificadoService.cs",
               "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Services\\CertificadoService.cs",
               "RelativeToolTip": "Services\\CertificadoService.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAuwDwAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAuwEIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-27T15:30:29.673Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "VoluntarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Infrastructure\\Repositories\\VoluntarioRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\VoluntarioRepository.cs",
@@ -121,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "Pessoa.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Pessoa.cs",
               "RelativeDocumentMoniker": "Models\\Pessoa.cs",
@@ -133,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "AlunoRepository.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Infrastructure\\Repositories\\AlunoRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\AlunoRepository.cs",
@@ -145,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 17,
               "Title": "20260624020306_AtualizandoPessoaJWT.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Migrations\\20260624020306_AtualizandoPessoaJWT.cs",
               "RelativeDocumentMoniker": "Migrations\\20260624020306_AtualizandoPessoaJWT.cs",
@@ -157,20 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T01:57:24.873Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Application\\Controllers\\AuthController.cs",
@@ -182,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 19,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "Services\\TokenService.cs",
@@ -190,12 +359,11 @@
               "RelativeToolTip": "Services\\TokenService.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-24T01:54:39.232Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-24T01:54:39.232Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "server.csproj",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\server.csproj",
               "RelativeDocumentMoniker": "server.csproj",

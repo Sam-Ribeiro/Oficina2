@@ -1,31 +1,58 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using server.Infrastructure.Repositories.Interfaces;
 using server.Models;
+using server.Infrastructure;
+using System.Linq;
 
-namespace server.Application.Controllers
+namespace server.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class AulaController : ControllerBase
     {
-        private readonly IAulaRepository _repository;
+        private readonly AppDbContext _context;
+        public AulaController(AppDbContext context) => _context = context;
 
-        public AulaController(IAulaRepository repository)
-        {
-            _repository = repository;
-        }
+        [HttpGet]
+        public IActionResult GetAll() => Ok(_context.Aulas.ToList());
 
         [HttpPost("create")]
-        public IActionResult CreateAula([FromBody] Aula aula)
+        public IActionResult Create([FromBody] AulaCreateDto dto)
         {
-            _repository.AddAula(aula);
-            return Ok(new { message = "Aula cadastrada com sucesso!" });
+            var aula = new Aula
+            {
+                Tema = dto.Tema,
+                DataHora = dto.DataHora,
+                Status = dto.Status,
+                TurmaId = dto.TurmaId
+            };
+            _context.Aulas.Add(aula);
+            _context.SaveChanges();
+            return Ok(aula);
         }
 
-        [HttpGet("get")]
-        public IActionResult GetAulas()
+        [HttpPut("update/{id}")]
+        public IActionResult Update(int id, [FromBody] AulaCreateDto dto)
         {
-            return Ok(_repository.GetAulas());
+            var aula = _context.Aulas.Find(id);
+            if (aula == null) return NotFound();
+
+            aula.Tema = dto.Tema;
+            aula.DataHora = dto.DataHora;
+            aula.Status = dto.Status;
+            aula.TurmaId = dto.TurmaId;
+
+            _context.SaveChanges();
+            return Ok(aula);
+        }
+
+        [HttpDelete("delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+            var aula = _context.Aulas.Find(id);
+            if (aula == null) return NotFound();
+            _context.Aulas.Remove(aula);
+            _context.SaveChanges();
+            return Ok(new { message = "Aula deletada." });
         }
     }
 }

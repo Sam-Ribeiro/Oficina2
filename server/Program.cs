@@ -6,21 +6,26 @@ using server.Infrastructure.Repositories;
 using server.Infrastructure.Repositories.Interfaces;
 using server.Services;
 using System.Text;
+using System.Text.Json.Serialization; 
+
 QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
-    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
 });
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
+
 
 builder.Services.AddScoped<IAlunoRepository, AlunoRepository>();
 builder.Services.AddScoped<IVoluntarioRepository, VoluntarioRepository>();
@@ -29,11 +34,10 @@ builder.Services.AddScoped<IAulaRepository, AulaRepository>();
 builder.Services.AddScoped<ITurmaRepository, TurmaRepository>();
 builder.Services.AddScoped<IPresencaRepository, PresencaRepository>();
 builder.Services.AddScoped<CertificadoService>();
-
 builder.Services.AddScoped<TokenService>();
 
-var key = Encoding.ASCII.GetBytes("UmaChaveSuperSecretaGiganteParaOProjetoDaSprint2026!");
 
+var key = Encoding.ASCII.GetBytes("UmaChaveSuperSecretaGiganteParaOProjetoDaSprint2026!");
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -52,6 +56,7 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -63,7 +68,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UseCors("AllowAll");
 
 if (app.Environment.IsDevelopment())
 {
@@ -72,7 +76,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
 
