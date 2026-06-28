@@ -1,22 +1,42 @@
 import { useState } from "react";
 import '../../styles/dialog.css'
+import { api } from "../../services/api";
 
-function ChangePasswordDialog({ open, onClose, id, onNotification }) {
-    const [newPassword, setNewPassword] = useState(null);
-    const [confirmPassword, setConfirmPassword] = useState(null);
+function ChangePasswordDialog({ open, onClose, person, onNotification, }) {
+    const [newPassword, setNewPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [oldPassword, setOldPassword] = useState("");
 
-    const handleSave = () => {
+    const handleSave = async () => {
         
         if (newPassword !== confirmPassword) {    
             onNotification("As senhas não coincidem");
             return;
         }
-        setNewPassword("");
-        setConfirmPassword("");
-        onNotification("Senha alterada com sucesso!");
-        onClose();
+        if(oldPassword !== person.senha){
+            onNotification("A senha antiga não confere")
+            return;
+        }
+        try{
+            let editItem = {
+                ...person,
+                id: 0,
+                senha: newPassword
+            };
+            if(person.role === "Aluno"){
+                await api.put(`/Aluno/update/${person.id}`, editItem);
+            }else if(person.role === "Voluntario"){
+                await api.put(`/Voluntario/update/${person.id}`, editItem);
+            }
+            onNotification("Senha alterada com sucesso!");
+            handleClose();
+        } catch (err) {
+            console.log(err)
+            onNotification("Erro: Verifique os campos e tente novamente.")
+        }
     };
     const handleClose = () => {
+        setOldPassword("")
         setNewPassword("");
         setConfirmPassword("");
         onNotification(null);
@@ -28,14 +48,15 @@ function ChangePasswordDialog({ open, onClose, id, onNotification }) {
     return (
         <div className="dialog-overlay">
             <div className="dialog dialog-password">
-                <div className="dialog-header"><h2>Alterar Senha - {id}</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
+                <div className="dialog-header"><h2>Alterar Senha - {person.id}</h2> <button onClick={handleClose} className="material-icons close-button">close</button></div>
                 <div className="input-group" id="actual-password">
                     <label htmlFor="password">Senha atual</label>
                     <input
                         type="password"
                         placeholder="Digite sua senha atual"
+                        value={oldPassword}
+                        onChange={(e) => setOldPassword(e.target.value)}
                     />
-                    <span className="error-message">A senha atual não está correta!</span>
                 </div>
 
                 <div className="input-group" id="new-password">
@@ -46,7 +67,6 @@ function ChangePasswordDialog({ open, onClose, id, onNotification }) {
                         value={newPassword}
                         onChange={(e) => setNewPassword(e.target.value)}
                     />
-                    <span className="error-message">A nova senha deve ter pelo menos 6 caracteres!</span>
                 </div>
 
                 <div className="input-group" id="confirm-password">
@@ -57,7 +77,6 @@ function ChangePasswordDialog({ open, onClose, id, onNotification }) {
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
-                    <span className="error-message">As senhas não coincidem!</span>
                 </div>
 
                 <button onClick={handleSave} id="btnSave">

@@ -34,7 +34,7 @@ function PersonTable({ items, selectedItem, onSelect, setOpenPasswordDialog }) {
                             <td>{i.idade}</td>
                             <td className='small-column center'>
                                 <button className={`material-icons
-                                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.id == i.id ? "" : "none"}`} 
+                                    ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Voluntario" || user.id == i.id ? "" : "none"}`} 
                                     onClick={() => { onSelect(i.id); setOpenPasswordDialog(true);}}>
                                     key
                                 </button>

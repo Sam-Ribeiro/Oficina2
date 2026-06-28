@@ -11,16 +11,17 @@ import '../styles/theme.css'
 import '../styles/common.css'
 
 function VoluntariosPage() {
+    
     const [open, setOpen] = useState(true);
-    const toggleNav = () => {
-        setOpen(prev => !prev);
-    };
-    /*
-    const [person, setPerson] = useState([]);
+    const toggleNav = () => setOpen(prev => !prev);
+
+    const [items, setItems] = useState([]);
+    const [filter, setFilter] = useState("");
+
     const fetchPersons = async () => {
         try {
-            const res = await api.get("/Aluno/get");
-            setPerson(res.data);
+            const res = await api.get("/Voluntario/get");
+            setItems(res.data);
         } catch (err) {
             console.error(err);
         }
@@ -29,49 +30,36 @@ function VoluntariosPage() {
     useEffect(() => {
         fetchPersons();
     }, []);
-    */
+
+    const filteredItems = items.filter(i =>
+        i.nome.toLowerCase().includes(filter.toLowerCase()) ||
+        i.idade.toString().includes(filter)
+    );
 
     const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItemEdit, setSelectedItemEdit] = useState(null);
+
+    const [openPasswordDialog, setOpenPasswordDialog] = useState(false);
+    const [openCreateDialog, setOpenCreateDialog] = useState(false);
+    const [notification, setNotification] = useState(null);
 
     const handleDelete = async () => {
-        if (!selectedItem){ 
-            console.warn("Nenhum aluno selecionado para deletar.");
-            return;}
+        if (!selectedItem) {
+            console.warn("Nenhum voluntario selecionado para deletar.");
+            return;
+        }
 
         try {
-            console.log("Deletando aluno com ID:", selectedItem);
-            await api.delete(`/Aluno/delete/${selectedItem}`);
-            await fetchItems();
+            await api.delete(`/Voluntario/delete/${selectedItem}`);
+            await fetchPersons();
             setSelectedItem(null);
         } catch (error) {
-            console.error("Erro ao deletar aluno:", error);
+            console.error("Erro ao deletar voluntario:", error);
         }
     };
 
-    const [items, setItems] = useState([
-        { id: 1, nome: 'Samuel', cpf:12345, idade: 21, ra: 1255, curso:'Curso 1' },
-        { id: 2, nome: 'João', cpf:44455, idade: 27, ra: 6634, curso:'Curso 3' },
-        { id: 3, nome: 'Maria', cpf:77777, idade: 23, ra: 7734, curso:'Curso C'  },
-    ]);
-
-    const [itemsList, setItemsList] = useState(items);
-
-    const onSearch = (filter) => {
-        setItemsList(
-            items.filter(i => 
-                i.nome.toLowerCase().includes(filter.toLowerCase()) ||
-                i.idade.toString().includes(filter)
-            )
-        );
-    }
-    const [selectedItemEdit, setSelectedItemEdit] = useState(
-        {
-            id:'', nome:'', idade:'', cpf:'',email:'',
-        }
-    )
-
-    const editItem = function(){
-        const item = items.find(item => item.id === selectedItem);
+    const editItem = () => {
+        const item = items.find(i => i.id === selectedItem);
 
         if (!item) {
             console.warn("Nenhum voluntario selecionado");
@@ -80,27 +68,32 @@ function VoluntariosPage() {
 
         setSelectedItemEdit(item);
         setOpenCreateDialog(true);
-    }
+    };
 
-    const [openPasswordDialog, setOpenPasswordDialog] = useState(false);
-    const [openCreateDialog, setOpenCreateDialog] = useState(false);
-    const [notification, setNotification] = useState(null);
+    const onAdd = () => {
+        setSelectedItemEdit(null);
+        setOpenCreateDialog(true);
+    };
+
     return (
     <>
         <Header onToggleNav={toggleNav}></Header>
         <div className="container">
             <SideNav pageIndex={2} open={open}></SideNav>
             <main>
-                <TableHeader pageName="Voluntários" icon="volunteer_activism" onDelete={handleDelete} onSearch={onSearch} onAdd={() => setOpenCreateDialog(true)} onEdit={()=> editItem()}></TableHeader>
-                <div className="table-container">
-                    <PersonTable 
-                        items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem} 
-                        openPasswordDialog={openPasswordDialog} setOpenPasswordDialog={setOpenPasswordDialog}
-                    /> 
-                </div>
-                <ChangePasswordDialog onNotification={(n) =>setNotification(n)} open={openPasswordDialog} id={selectedItem} onClose={() => {setSelectedItemEdit(null);setOpenCreateDialog(false);}}/>
-                <CreateVolunteerDialog onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setOpenCreateDialog(false);}} voluntario={selectedItemEdit}/>
-                <Notification message={notification} />
+                <TableHeader pageName="Voluntários" icon="volunteer_activism" onDelete={handleDelete} onSearch={setFilter} onAdd={onAdd} onEdit={editItem}/>
+                    <div className="table-container">
+                        <PersonTable items={filteredItems} selectedItem={selectedItem} onSelect={setSelectedItem} 
+                            openPasswordDialog={openPasswordDialog} setOpenPasswordDialog={setOpenPasswordDialog}
+                        />
+                    </div>
+                    <ChangePasswordDialog onNotification={setNotification} open={openPasswordDialog} person={items.find(i => i.id === selectedItem)}
+                        onClose={() => { setSelectedItem(null); setOpenPasswordDialog(false); fetchPersons()}}
+                    />
+                    <CreateVolunteerDialog onNotification={setNotification} open={openCreateDialog}
+                        onClose={() => { setSelectedItemEdit(null); setOpenCreateDialog(false); fetchPersons()}} voluntario={selectedItemEdit}
+                    />
+                    <Notification message={notification} />
             </main>
         </div>
     </>

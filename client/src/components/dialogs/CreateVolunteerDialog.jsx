@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import '../../styles/dialog.css';
-
+import { api } from "../../services/api";
 function CreateVolunteerDialog({ open, onClose, onNotification, voluntario }) {
     const [nome, setNome] = useState("");
     const [cpf, setCpf] = useState("");
     const [email, setEmail] = useState("");
     const [idade, setIdade] = useState("");
     const [ra, setRa] = useState("");
-    const [curso, setCurso] = useState("");
 
     useEffect(() => {
         if (voluntario) {
@@ -16,19 +15,50 @@ function CreateVolunteerDialog({ open, onClose, onNotification, voluntario }) {
             setEmail(voluntario.email || "");
             setIdade(voluntario.idade || "");
             setRa(voluntario.ra || "");
-            setCurso(voluntario.curso || "");
         }
     }, [voluntario]);
 
-    const handleSave = () => {
+    const handleSave = async () => {
         if(voluntario){
-            onNotification("Voluntário editado com sucesso!");
+            try{
+                let editVoluntario = {
+                    id: 0,
+                    nome: nome,
+                    cpf: cpf,
+                    idade: idade,
+                    email: email,
+                    senha: voluntario.senha,
+                    role: "Voluntario",
+                    ra: ra,
+                }
+                const res = await api.put(`/Voluntario/update/${voluntario.id}`, editVoluntario);
+                onNotification("Voluntario editado com sucesso!");
+                handleClose();
+            } catch (err) {
+                console.log(err)
+                onNotification("Erro: Verifique os campos e tente novamente.")
+            }
         }
         else{
-            onNotification("Voluntário cadastrado com sucesso!");
+            try{
+                let novoVoluntario = {
+                    id: 0,
+                    nome: nome,
+                    cpf: cpf,
+                    idade: idade,
+                    email: email,
+                    senha: "123456",
+                    role: "Voluntario",
+                    ra: ra,
+                }
+                const res = await api.post("/Voluntario/create", novoVoluntario)
+                onNotification("Voluntario cadastrado com sucesso!");
+                handleClose();
+            } catch (err) {
+                console.log(err)
+                onNotification("Erro: Verifique os campos e tente novamente.")
+            }
         }
-
-        handleClose();
     };
 
     const handleClose = () => {
@@ -37,7 +67,6 @@ function CreateVolunteerDialog({ open, onClose, onNotification, voluntario }) {
         setEmail("");
         setIdade("");
         setRa("");
-        setCurso("");
 
         onClose();
     };
@@ -68,17 +97,6 @@ function CreateVolunteerDialog({ open, onClose, onNotification, voluntario }) {
                         onChange={(e) => setRa(e.target.value)}
                     />
                     <span className="error-message">O RA é obrigatório.</span>
-                </div>
-
-                <div className="input-group">
-                    <label htmlFor="curso">Curso</label>
-                    <input
-                        type="text"
-                        placeholder="Curso"
-                        value={curso}
-                        onChange={(e) => setCurso(e.target.value)}
-                    />
-                    <span className="error-message">O curso é obrigatório.</span>
                 </div>
 
                 <div className="input-group">

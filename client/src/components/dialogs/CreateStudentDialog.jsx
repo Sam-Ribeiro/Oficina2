@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import '../../styles/dialog.css';
-
+import { api } from "../../services/api";
 function CreateStudentDialog({ open, onClose, onNotification, aluno }) {
 
 
@@ -11,7 +11,6 @@ function CreateStudentDialog({ open, onClose, onNotification, aluno }) {
 
     useEffect(() => {
         if (aluno) {
-            console.log(aluno)
             setNome(aluno.nome || "");
             setCpf(aluno.cpf || "");
             setEmail(aluno.email || "");
@@ -19,14 +18,47 @@ function CreateStudentDialog({ open, onClose, onNotification, aluno }) {
         }
     }, [aluno]);
 
-    const handleSave = () => {
+    const handleSave = async () => {
         if(aluno){
-            onNotification("Aluno editado com sucesso!");
+            try{
+                let editAluno = {
+                    id: 0,
+                    nome: nome,
+                    cpf: cpf,
+                    idade: idade,
+                    email: email,
+                    senha: aluno.senha,
+                    role: "Aluno",
+                    turmas: [],
+                }
+                const res = await api.put(`/Aluno/update/${aluno.id}`, editAluno);
+                onNotification("Aluno editado com sucesso!");
+                handleClose();
+            } catch (err) {
+                console.log(err)
+                onNotification("Erro: Verifique os campos e tente novamente.")
+            }
         }
         else{
-            onNotification("Aluno cadastrado com sucesso!");
+            try{
+                let novoAluno = {
+                    id: 0,
+                    nome: nome,
+                    cpf: cpf,
+                    idade: idade,
+                    email: email,
+                    senha: "123456",
+                    role: "Aluno",
+                    turmas: []
+                }
+                const res = await api.post("/Aluno/create", novoAluno)
+                onNotification("Aluno cadastrado com sucesso!");
+                handleClose();
+            } catch (err) {
+                console.log(err)
+                onNotification("Erro: Verifique os campos e tente novamente.")
+            }
         }
-        handleClose();
     };
 
     const handleClose = () => {

@@ -7,20 +7,20 @@ import TableHeader from "../components/common/TableHeader";
 import ChangePasswordDialog from "../components/dialogs/ChangePasswordDialog";
 import CreateStudentDialog from "../components/dialogs/CreateStudentDialog";
 import Notification from "../components/common/Notification";
-import '../styles/theme.css'
-import '../styles/common.css'
+import '../styles/theme.css';
+import '../styles/common.css';
 
 function AlunosPage() {
     const [open, setOpen] = useState(true);
-    const toggleNav = () => {
-        setOpen(prev => !prev);
-    };
-    /*
-    const [person, setPerson] = useState([]);
+    const toggleNav = () => setOpen(prev => !prev);
+
+    const [items, setItems] = useState([]);
+    const [filter, setFilter] = useState("");
+
     const fetchPersons = async () => {
         try {
             const res = await api.get("/Aluno/get");
-            setPerson(res.data);
+            setItems(res.data);
         } catch (err) {
             console.error(err);
         }
@@ -29,27 +29,36 @@ function AlunosPage() {
     useEffect(() => {
         fetchPersons();
     }, []);
-    */
+
+    const filteredItems = items.filter(i =>
+        i.nome.toLowerCase().includes(filter.toLowerCase()) ||
+        i.idade.toString().includes(filter)
+    );
 
     const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItemEdit, setSelectedItemEdit] = useState(null);
+
+    const [openPasswordDialog, setOpenPasswordDialog] = useState(false);
+    const [openCreateDialog, setOpenCreateDialog] = useState(false);
+    const [notification, setNotification] = useState(null);
 
     const handleDelete = async () => {
-        if (!selectedItem){ 
+        if (!selectedItem) {
             console.warn("Nenhum aluno selecionado para deletar.");
-            return;}
+            return;
+        }
 
         try {
-            console.log("Deletando aluno com ID:", selectedItem);
             await api.delete(`/Aluno/delete/${selectedItem}`);
-            await fetchItems();
+            await fetchPersons();
             setSelectedItem(null);
         } catch (error) {
             console.error("Erro ao deletar aluno:", error);
         }
     };
 
-    const editItem = function(){
-        const item = items.find(item => item.id === selectedItem);
+    const editItem = () => {
+        const item = items.find(i => i.id === selectedItem);
 
         if (!item) {
             console.warn("Nenhum aluno selecionado");
@@ -58,59 +67,37 @@ function AlunosPage() {
 
         setSelectedItemEdit(item);
         setOpenCreateDialog(true);
-    }
+    };
 
-    const [items, setItems] = useState([
-        { id: 1, nome: 'Samuel', idade: 22, cpf: 20346452, email:'samuel@email.com' },
-        { id: 2, nome: 'João', idade: 20, cpf: 1111111, email:'João@email.com' },
-        { id: 3, nome: 'Maria', idade: 21, cpf: 2222222, email:'Maria@email.com' },
-    ]);
-
-    const [selectedItemEdit, setSelectedItemEdit] = useState(
-        {
-            id:'', nome:'', idade:'', cpf:'',email:''
-        }
-    )
-    const [itemsList, setItemsList] = useState(items);
-
-    const onSearch = (filter) => {
-        setItemsList(
-            items.filter(i => 
-                i.nome.toLowerCase().includes(filter.toLowerCase()) ||
-                i.idade.toString().includes(filter)
-            )
-        );
-    }
-
-    const onAdd = function(){
-        setSelectedItemEdit(null)
-        setOpenCreateDialog(true)
-    }
-
-    const [openPasswordDialog, setOpenPasswordDialog] = useState(false);
-    const [openCreateDialog, setOpenCreateDialog] = useState(false);
-    const [notification, setNotification] = useState(null);
+    const onAdd = () => {
+        setSelectedItemEdit(null);
+        setOpenCreateDialog(true);
+    };
 
     return (
-    <>
-        <Header onToggleNav={toggleNav}></Header>
-        <div className="container">
-            <SideNav pageIndex={5} open={open}></SideNav>
-            <main>
-                <TableHeader pageName="Alunos" icon="people" onDelete={handleDelete} onSearch={onSearch} onAdd={() => onAdd()} onEdit={()=> {editItem()}} ></TableHeader>
-                <div className="table-container">
-                    <PersonTable 
-                        items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem} 
-                        openPasswordDialog={openPasswordDialog} setOpenPasswordDialog={setOpenPasswordDialog}
-                    />  
-                </div>
-                <ChangePasswordDialog onNotification={(n) =>setNotification(n)} open={openPasswordDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenPasswordDialog(false);}}/>
-                <CreateStudentDialog onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setSelectedItemEdit(null);setOpenCreateDialog(false);}} aluno={selectedItemEdit} />
-                <Notification message={notification} />
-            </main>
-        </div>
-    </>
-    )
+        <>
+            <Header onToggleNav={toggleNav} />
+
+            <div className="container">
+                <SideNav pageIndex={5} open={open} />
+                <main>
+                    <TableHeader pageName="Alunos" icon="people" onDelete={handleDelete} onSearch={setFilter} onAdd={onAdd} onEdit={editItem}/>
+                    <div className="table-container">
+                        <PersonTable items={filteredItems} selectedItem={selectedItem} onSelect={setSelectedItem} 
+                            openPasswordDialog={openPasswordDialog} setOpenPasswordDialog={setOpenPasswordDialog}
+                        />
+                    </div>
+                    <ChangePasswordDialog onNotification={setNotification} open={openPasswordDialog} person={items.find(i => i.id === selectedItem)}
+                        onClose={() => { setSelectedItem(null); setOpenPasswordDialog(false); fetchPersons()}}
+                    />
+                    <CreateStudentDialog onNotification={setNotification} open={openCreateDialog}
+                        onClose={() => { setSelectedItemEdit(null); setOpenCreateDialog(false); fetchPersons()}} aluno={selectedItemEdit}
+                    />
+                    <Notification message={notification} />
+                </main>
+            </div>
+        </>
+    );
 }
 
-export default AlunosPage
+export default AlunosPage;

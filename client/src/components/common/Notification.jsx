@@ -17,7 +17,7 @@ function Notification({ message }) {
 
     if (!visible) return null;
 
-    return (
+    if(message) return (
         <div className="notification">
             {message}
         </div>

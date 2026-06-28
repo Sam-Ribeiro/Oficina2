@@ -1,44 +1,62 @@
 import { useState, useEffect } from "react";
 import "../../styles/dialog.css";
+import { api } from "../../services/api";
 
 function CreateWorkshopDialog({open, onClose, onNotification, oficina}) {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
-    const [theme, setTheme] = useState("");
-
 
     useEffect(() => {
         if (oficina) {
             setName(oficina.nome || "");
             setDescription(oficina.descricao || "");
-            setTheme(oficina.tema || "");
         }
     }, [oficina]);
 
-    const handleSave = () => {
+    const handleSave = async () => {
         if (
             !name ||
-            !description ||
-            !theme
+            !description
         ) {
             onNotification("Preencha todos os campos obrigatórios.");
             return;
         }
 
         if(oficina){
-            onNotification("Oficina editada com sucesso!");
+            try{
+                let editOficina = {
+                    id: 0,
+                    nome: name,
+                    descricao: description,
+                }
+                const res = await api.put(`/Oficina/update/${oficina.id}`, editOficina);
+                onNotification("Oficina editada com sucesso!");
+                handleClose();
+            } catch (err) {
+                console.log(err)
+                onNotification("Erro: Verifique os campos e tente novamente.")
+            }
         }
         else{
-            onNotification("Oficina cadastrada com sucesso!");
+            try{
+                let novaOficina = {
+                    id: 0,
+                    nome: name,
+                    descricao: description,
+                }
+                const res = await api.post("/Oficina/create", novaOficina)
+                onNotification("Oficina cadastrada com sucesso!");
+                handleClose();
+            } catch (err) {
+                console.log(err)
+                onNotification("Erro: Verifique os campos e tente novamente.")
+            }
         }
-        
-        handleClose();
     };
 
     const handleClose = () => {
         setName("");
         setDescription("");
-        setTheme("");
         onNotification(null);
         onClose();
     };
@@ -66,16 +84,6 @@ function CreateWorkshopDialog({open, onClose, onNotification, oficina}) {
                         placeholder="Digite a descrição da oficina"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
-                    />
-                </div>
-
-                <div className="input-group">
-                    <label>Tema</label>
-                    <input
-                        type="text"
-                        placeholder="Digite o tema da oficina"
-                        value={theme}
-                        onChange={(e) => setTheme(e.target.value)}
                     />
                 </div>
 

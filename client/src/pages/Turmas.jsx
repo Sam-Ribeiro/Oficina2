@@ -13,9 +13,7 @@ import { data } from "react-router-dom";
 
 function TurmasPage() {
     const [open, setOpen] = useState(true);
-    const toggleNav = () => {
-        setOpen(prev => !prev);
-    };
+    const toggleNav = () => {setOpen(prev => !prev);};
         /*
     const [item, setItem] = useState([]);
     const fetchItems = async () => {
@@ -60,25 +58,26 @@ function TurmasPage() {
          },
     ]);
 
-    const [workshops, setWorkshops] = useState([
-        { id: 1, nome: 'Robótica' },
-        { id: 2, nome: 'Pintura' },
-        { id: 3, nome: 'Culinária' },
-        { id: 4, nome: 'Fotografia' },
-        { id: 5, nome: 'Programação' }
-    ]);
+    const [workshops, setWorkshops] = useState([]);
+    const [students, setStudents] = useState([]);
+    const [volunteers, setVolunteers] = useState([]);
 
-    const [students, setStudents] = useState([
-        { id: 1, nome: 'Alice' },
-        { id: 2, nome: 'Bob' },
-        { id: 3, nome: 'Charlie' }
-    ]);
-
-    const [volunteers, setVolunteers] = useState([
-        { id: 1, nome: 'Samuel' },
-        { id: 2, nome: 'Maria' },
-        { id: 3, nome: 'João' }
-    ]);
+    const fetchItems = async () => {
+        try {
+            const resWorkshop = await api.get("/Oficina/get");
+            setWorkshops(resWorkshop.data);
+            const resStudents = await api.get("/Aluno/get");
+            setStudents(resStudents.data);
+            const resVolunteers = await api.get("/Voluntario/get");
+            setVolunteers(resVolunteers.data);
+        } catch (err) {
+            console.error(err);
+            setNotification("Erro ao carregar parâmetros.")
+        }
+    };
+    useEffect(() => {
+        fetchItems();
+    }, []);    
 
     const [classes, setClasses] = useState([
         { id: 1, data: '2026-01-15', conteudo: 'Introdução à Robótica', status: 'Concluído' },

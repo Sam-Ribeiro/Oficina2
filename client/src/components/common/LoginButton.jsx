@@ -7,7 +7,6 @@ function LoginButton( { email, password, id }) {
     const navigate = useNavigate();
     
     const handleLogin = async () => {
-        console.log("Login 1")
         try{
             let user = {
                 login: email,
@@ -18,24 +17,8 @@ function LoginButton( { email, password, id }) {
             localStorage.setItem('auth', 'true');
             navigate('/home');
         } catch (err) {
-            console.log(err)
+            console.log(err.data)
         }
-        /*
-        let user = {
-            name: "Samuel Ribeiro",
-            role: "DEVELOPER"
-        };
-            if (email === password) {
-            user = {
-                name: `Usuário ${email}`,
-                role: `${email}`,
-                id: `2`
-            };
-        }
-        localStorage.setItem('auth', 'true');
-        localStorage.setItem("user", JSON.stringify(user));
-        navigate('/home');
-        */
     }
 
     return (

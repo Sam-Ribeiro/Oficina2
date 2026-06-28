@@ -11,7 +11,10 @@ function SideNav({ pageIndex, open }) {
         navigate('/login');
     }
     const token = localStorage.getItem("token");
-
+    if (!token) {
+        handleLogoff();
+        return;
+    }
     const user = jwtDecode(token);
     return (
         <nav className={`side-nav ${open ? '' : 'hidden'}`}>

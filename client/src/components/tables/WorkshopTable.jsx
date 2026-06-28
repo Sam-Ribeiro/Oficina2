@@ -10,7 +10,6 @@ function WorkshopTable({ items, selectedItem, onSelect }) {
                     <th className='small-column center'><button onClick={selectedItem === null ? () => onSelect(null) : () => onSelect(null)} className="material-symbols-outlined">indeterminate_check_box</button></th>
                     <th className='small-column'>Id</th>
                     <th>Nome</th>
-                    <th>Tema</th>
                     <th>Descrição</th>
                 </tr>
             </thead>
@@ -27,13 +26,12 @@ function WorkshopTable({ items, selectedItem, onSelect }) {
                             </td>
                             <td className='small-column'>{i.id}</td>
                             <td>{i.nome}</td>
-                            <td>{i.tema}</td>
                             <td>{i.descricao}</td>
                         </tr>
                     ))
                 ) : (
                     <tr>
-                        <td colSpan="5" className='center'>
+                        <td colSpan="4" className='center'>
                             Nenhum registro encontrado
                         </td>
                     </tr>
