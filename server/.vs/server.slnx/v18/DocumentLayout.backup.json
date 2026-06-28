@@ -27,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\certificadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\application\\controllers\\presencacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:application\\controllers\\presencacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|c:\\users\\usuario\\documents\\real\\oficina2\\server\\models\\presencacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F3EE6B2D-0B19-306C-2C68-AB272C4E49C6}|server.csproj|solutionrelative:models\\presencacreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -98,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -114,59 +110,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AlunoController.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AlunoController.cs",
-              "RelativeDocumentMoniker": "Application\\Controllers\\AlunoController.cs",
-              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AlunoController.cs",
-              "RelativeToolTip": "Application\\Controllers\\AlunoController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-28T21:06:59.903Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PresencaCreateDto.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\PresencaCreateDto.cs",
-              "RelativeDocumentMoniker": "Models\\PresencaCreateDto.cs",
-              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\PresencaCreateDto.cs",
-              "RelativeToolTip": "Models\\PresencaCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-28T14:28:05.83Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AulaController.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AulaController.cs",
               "RelativeDocumentMoniker": "Application\\Controllers\\AulaController.cs",
               "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AulaController.cs",
               "RelativeToolTip": "Application\\Controllers\\AulaController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAIwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-28T14:18:05.3Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "OficinaController.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\OficinaController.cs",
               "RelativeDocumentMoniker": "Application\\Controllers\\OficinaController.cs",
               "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\OficinaController.cs",
               "RelativeToolTip": "Application\\Controllers\\OficinaController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA8wC8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA8wDAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-28T14:17:52.289Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "AulaCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\AulaCreateDto.cs",
               "RelativeDocumentMoniker": "Models\\AulaCreateDto.cs",
@@ -179,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "OficinaCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\OficinaCreateDto.cs",
               "RelativeDocumentMoniker": "Models\\OficinaCreateDto.cs",
@@ -218,6 +188,32 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PresencaCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\PresencaCreateDto.cs",
+              "RelativeDocumentMoniker": "Models\\PresencaCreateDto.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\PresencaCreateDto.cs",
+              "RelativeToolTip": "Models\\PresencaCreateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T14:28:05.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AlunoController.cs",
+              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AlunoController.cs",
+              "RelativeDocumentMoniker": "Application\\Controllers\\AlunoController.cs",
+              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AlunoController.cs",
+              "RelativeToolTip": "Application\\Controllers\\AlunoController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-28T21:06:59.903Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Aula.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Aula.cs",
@@ -227,19 +223,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-28T14:29:45.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PresencaController.cs",
-              "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\PresencaController.cs",
-              "RelativeDocumentMoniker": "Application\\Controllers\\PresencaController.cs",
-              "ToolTip": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\PresencaController.cs",
-              "RelativeToolTip": "Application\\Controllers\\PresencaController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAcwDgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-28T14:28:22.221Z",
               "EditorCaption": ""
             },
             {
@@ -257,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Presenca.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Presenca.cs",
               "RelativeDocumentMoniker": "Models\\Presenca.cs",
@@ -270,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "TurmaCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\TurmaCreateDto.cs",
               "RelativeDocumentMoniker": "Models\\TurmaCreateDto.cs",
@@ -283,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "Turma.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Turma.cs",
               "RelativeDocumentMoniker": "Models\\Turma.cs",
@@ -295,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "CertificadoService.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Services\\CertificadoService.cs",
               "RelativeDocumentMoniker": "Services\\CertificadoService.cs",
@@ -308,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "VoluntarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Infrastructure\\Repositories\\VoluntarioRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\VoluntarioRepository.cs",
@@ -320,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "Pessoa.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Models\\Pessoa.cs",
               "RelativeDocumentMoniker": "Models\\Pessoa.cs",
@@ -332,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "AlunoRepository.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Infrastructure\\Repositories\\AlunoRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\AlunoRepository.cs",
@@ -344,7 +327,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "20260624020306_AtualizandoPessoaJWT.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Migrations\\20260624020306_AtualizandoPessoaJWT.cs",
               "RelativeDocumentMoniker": "Migrations\\20260624020306_AtualizandoPessoaJWT.cs",
@@ -356,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Application\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Application\\Controllers\\AuthController.cs",
@@ -368,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "Services\\TokenService.cs",
@@ -380,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "server.csproj",
               "DocumentMoniker": "C:\\Users\\usuario\\Documents\\real\\Oficina2\\server\\server.csproj",
               "RelativeDocumentMoniker": "server.csproj",
