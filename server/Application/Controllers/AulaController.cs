@@ -13,7 +13,21 @@ namespace server.Controllers
         public AulaController(AppDbContext context) => _context = context;
 
         [HttpGet]
-        public IActionResult GetAll() => Ok(_context.Aulas.ToList());
+        public IActionResult GetAll(int? turmaId)
+        {
+            
+            if (turmaId.HasValue)
+            {
+                var aulasFiltradas = _context.Aulas
+                    .Where(a => a.TurmaId == turmaId.Value)
+                    .ToList();
+
+                return Ok(aulasFiltradas);
+            }
+
+            
+            return Ok(_context.Aulas.ToList());
+        }
 
         [HttpPost("create")]
         public IActionResult Create([FromBody] AulaCreateDto dto)
