@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using server.Models;
 using server.Infrastructure;
 using System.Linq;
@@ -15,18 +16,19 @@ namespace server.Controllers
         [HttpGet]
         public IActionResult GetAll(int? aulaId)
         {
+            
+            var query = _context.Presencas.Include(p => p.Aluno).AsQueryable();
+
             if (aulaId.HasValue)
             {
-                var presencaFiltradas= _context.Presencas
-                    .Where(p => p.AulaId == aulaId.Value)
-                    .ToList();
-
-                return Ok(presencaFiltradas);
+                query = query.Where(p => p.AulaId == aulaId.Value);
             }
 
-
-            return Ok(_context.Presencas.ToList());
+           
+            return Ok(query.ToList());
         }
+
+        
 
         [HttpPost("create")]
         public IActionResult Create([FromBody] PresencaCreateDto dto)
