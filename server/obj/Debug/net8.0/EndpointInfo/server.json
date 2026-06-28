@@ -210,6 +210,38 @@
         }
       }
     },
+    "/api/Certificado/gerar/{alunoId}/{turmaId}": {
+      "get": {
+        "tags": [
+          "Certificado"
+        ],
+        "parameters": [
+          {
+            "name": "alunoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "turmaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Oficina/create": {
       "post": {
         "tags": [
@@ -646,13 +678,6 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Aluno"
-            },
-            "nullable": true
-          },
-          "aulas": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Aula"
             },
             "nullable": true
           }
