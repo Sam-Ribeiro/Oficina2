@@ -83,6 +83,7 @@ function CreateStudentDialog({ open, onClose, onNotification, aluno }) {
                         placeholder="Nome"
                         value={nome}
                         onChange={(e) => setNome(e.target.value)}
+                        id="inputNome"
                     />
                     <span className="error-message">O nome é obrigatório.</span>
                 </div>
@@ -94,6 +95,7 @@ function CreateStudentDialog({ open, onClose, onNotification, aluno }) {
                         placeholder="CPF"
                         value={cpf}
                         onChange={(e) => setCpf(e.target.value)}
+                        id="inputCpf"
                     />
                     <span className="error-message">O CPF deve ser único.</span>
                 </div>
@@ -105,6 +107,7 @@ function CreateStudentDialog({ open, onClose, onNotification, aluno }) {
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        id="inputEmail"
                     />
                     <span className="error-message">O email é obrigatório e deve ser válido.</span>
                 </div>
@@ -117,6 +120,7 @@ function CreateStudentDialog({ open, onClose, onNotification, aluno }) {
                         placeholder="Idade"
                         value={idade}
                         onChange={(e) => setIdade(e.target.value)}
+                        id="inputIdade"
                     />
                     <span className="error-message">A idade deve ser um número entre 0 e 120.</span>
                 </div>

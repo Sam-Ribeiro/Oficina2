@@ -17,11 +17,11 @@ function TableHeader( { pageName, icon, onDelete, onSearch, onAdd, onEdit } ) {
                 <span className="material-icons">search</span>
             </button>
 
-            <button onClick={onEdit}>
+            <button onClick={onEdit} id="btnEdit">
                 <span className="material-icons">edit</span>
             </button>
 
-            <button onClick={onDelete}>
+            <button onClick={onDelete} id="btnDelete">
                 <span className="material-icons">delete</span>
             </button>
 

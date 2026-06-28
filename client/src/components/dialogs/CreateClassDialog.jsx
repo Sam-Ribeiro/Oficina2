@@ -35,8 +35,8 @@ function CreateClassDialog({
             }))
         );
 
-        setStartDate(turma.dataInicio);
-        setEndDate(turma.dataTermino);
+        setStartDate(turma.dataInicio.substring(0, 10));
+        setEndDate(turma.dataTermino.substring(0, 10));
     }, [turma]);
 
     const studentOptions = students.map(student => ({
@@ -76,41 +76,14 @@ function CreateClassDialog({
 
         if(turma){
             try{
-                let oficinaSelecionada = workshops.find(w => w.value === selectedWorkshop?.value)
                 let editTurma = {
                     id: 0,
                     dataInicio: startDate,
                     dataTermino: endDate,
-                    status: "Status",
+                    status: "Aberta",
                     oficinaId: selectedWorkshop?.value,
-                    oficina: {
-                    },
                     voluntarioId: selectedVolunteer?.value,
-                    voluntario: {/*
-                        "id": 0,
-                        "nome": "string",
-                        "cpf": "string",
-                        "idade": 0,
-                        "email": "string",
-                        "senha": "string",
-                        "role": "string",
-                        "ra": "string"
-                        */
-                    },
-                    alunos: selectedStudents
-                    /*[
-                        {
-                        "id": 0,
-                        "nome": "string",
-                        "cpf": "string",
-                        "idade": 0,
-                        "email": "string",
-                        "senha": "string",
-                        "role": "string",
-                        "turmas": ["string"]
-                        }
-                    ]*/
-                    
+                    alunosIds: selectedStudents.map(student => student.value), 
                 }
                 const res = await api.put(`/Turma/update/${turma.id}`, editTurma);
                 onNotification("Turma editada com sucesso!");
@@ -122,41 +95,16 @@ function CreateClassDialog({
         }
         else{
             try{
-                let oficinaSelecionada = workshops.find(w => w.value === selectedWorkshop?.value)
                 let novaTurma = {
                     id: 0,
                     dataInicio: startDate,
                     dataTermino: endDate,
-                    status: "Status",
+                    status: "Aberta",
                     oficinaId: selectedWorkshop?.value,
-                    oficina: {
-                    },
                     voluntarioId: selectedVolunteer?.value,
-                    voluntario: {/*
-                        "id": 0,
-                        "nome": "string",
-                        "cpf": "string",
-                        "idade": 0,
-                        "email": "string",
-                        "senha": "string",
-                        "role": "string",
-                        "ra": "string"
-                        */
-                    },
-                    alunos: selectedStudents
-                    /*[
-                        {
-                        "id": 0,
-                        "nome": "string",
-                        "cpf": "string",
-                        "idade": 0,
-                        "email": "string",
-                        "senha": "string",
-                        "role": "string",
-                        "turmas": ["string"]
-                        }
-                    ]*/
+                    alunosIds: selectedStudents.map(student => student.value), 
                 }
+                console.log(novaTurma)
                 const res = await api.post("/Turma/create", novaTurma)
                 onNotification("Turma cadastrada com sucesso!");
                 handleClose();
