@@ -144,6 +144,7 @@ function CreateClassDialog({
                         value={selectedWorkshop}
                         onChange={setSelectedWorkshop}
                         isClearable
+                        id="inputOficina"
                     />
                 </div>
 
@@ -157,6 +158,7 @@ function CreateClassDialog({
                             value={selectedVolunteer}
                             onChange={setSelectedVolunteer}
                             isClearable
+                            id="inputVoluntario"
                         />
                     </div>
 
@@ -193,6 +195,7 @@ function CreateClassDialog({
                         placeholder="Pesquisar alunos..."
                         value={selectedStudents}
                         onChange={(selected) => setSelectedStudents(selected || [])}
+                        id="inputAlunos"
                     />
                 </div>
 

@@ -74,6 +74,7 @@ function CreateWorkshopDialog({open, onClose, onNotification, oficina}) {
                         placeholder="Digite o nome da oficina"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        id="inputNome"
                     />
                 </div>
 
@@ -84,6 +85,7 @@ function CreateWorkshopDialog({open, onClose, onNotification, oficina}) {
                         placeholder="Digite a descrição da oficina"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
+                        id="inputDescricao"
                     />
                 </div>
 

@@ -84,6 +84,7 @@ function CreateVolunteerDialog({ open, onClose, onNotification, voluntario }) {
                         placeholder="Nome"
                         value={nome}
                         onChange={(e) => setNome(e.target.value)}
+                        id="inputNome"
                     />
                     <span className="error-message">O nome é obrigatório.</span>
                 </div>
@@ -95,6 +96,7 @@ function CreateVolunteerDialog({ open, onClose, onNotification, voluntario }) {
                         placeholder="RA"
                         value={ra}
                         onChange={(e) => setRa(e.target.value)}
+                        id="inputRa"
                     />
                     <span className="error-message">O RA é obrigatório.</span>
                 </div>
@@ -106,6 +108,7 @@ function CreateVolunteerDialog({ open, onClose, onNotification, voluntario }) {
                         placeholder="CPF"
                         value={cpf}
                         onChange={(e) => setCpf(e.target.value)}
+                        id="inputCpf"
                     />
                     <span className="error-message">O CPF deve ser único.</span>
                 </div>
@@ -117,6 +120,7 @@ function CreateVolunteerDialog({ open, onClose, onNotification, voluntario }) {
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        id="inputEmail"
                     />
                     <span className="error-message">O email é obrigatório e deve ser válido.</span>
                 </div>
@@ -128,6 +132,7 @@ function CreateVolunteerDialog({ open, onClose, onNotification, voluntario }) {
                         placeholder="Idade"
                         value={idade}
                         onChange={(e) => setIdade(e.target.value)}
+                        id="inputIdade"
                     />
                     <span className="error-message">A idade deve ser um número entre 0 e 120.</span>
                 </div>

@@ -1,5 +1,5 @@
 export const testData = {
     loginUrl: 'http://localhost:5173/turmas',
-    validEmail: 'samuel@teste.com',
+    validEmail: 'admin@admin.com',
     validPassword: '123456'
 };

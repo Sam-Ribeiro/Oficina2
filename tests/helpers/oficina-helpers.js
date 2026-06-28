@@ -1,33 +1,26 @@
 import { commonLocators } from "../locators/common-locators";
 import { expect } from "@playwright/test";
 
-export async function CadastrarAluno(page) {
+export async function CadastrarOficina(page) {
 
-    await page.click(commonLocators.tabAluno)
+    await page.click(commonLocators.tabOficina)
 
     await page.click(commonLocators.botaoAdicionar)
 
     const codigoGerado = Date.now();
 
-    await page.fill(commonLocators.inputNome, `Teste ${codigoGerado}`);
+    await page.fill(commonLocators.inputNome, `Oficina - ${codigoGerado}`);
     await page.waitForTimeout(1000);
 
-    await page.fill(commonLocators.inputEmail, `teste${codigoGerado}@email.com`);
-    await page.waitForTimeout(1000);
-
-    await page.fill(commonLocators.inputIdade, '25');
-    await page.waitForTimeout(1000);
-
-    await page.fill(commonLocators.inputCpf, '12345678901');
+    await page.fill(commonLocators.inputDescricao, `descricao da oficina teste`);
     await page.waitForTimeout(1000);
 
     await page.click(commonLocators.botaoSalvar)
 
-    await expect(page.getByText('Aluno cadastrado com sucesso!')).toBeVisible();
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(2000);
 }
 
-export async function DeletarAluno(page) {
+export async function DeletarOficina(page) {
     await page.click(commonLocators.primeiroItemCheckbox)
     await page.waitForTimeout(1000);
 
@@ -36,7 +29,7 @@ export async function DeletarAluno(page) {
     await page.waitForTimeout(1000);
 }
 
-export async function EditarAluno(page) {
+export async function EditarOficina(page) {
     await page.click(commonLocators.primeiroItemCheckbox)
     await page.waitForTimeout(1000);
 

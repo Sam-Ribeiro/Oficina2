@@ -42,6 +42,17 @@ function ManageClassDialog({ open, onClose, id, onNotification, turma }) {
                 turmaId: turma.id
             }
             const res = await api.post("/Aula/create", novaAula)
+            const aulaId = res.data.id;
+            
+            await Promise.all(
+                turma.alunos.map((aluno) =>
+                    api.post("/Presenca/create", {
+                        aulaId,
+                        alunoId: aluno.id,
+                        presente: true,
+                    })
+                )
+            );
             onNotification("Aula cadastrada com sucesso!");
         } catch (err) {
             console.log(err)

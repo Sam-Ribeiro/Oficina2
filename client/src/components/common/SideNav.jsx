@@ -27,6 +27,7 @@ function SideNav({ pageIndex, open }) {
                         <span className="material-icons">home</span>
                     </Link>
                 </li>
+                {/*
                 <li>
                     <Link className={`${pageIndex === 1 ? "actual-page" : ""} 
                     ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Professor" || user.role === "Voluntario" ? "" : "none"}`} 
@@ -35,6 +36,7 @@ function SideNav({ pageIndex, open }) {
                         <span className="material-icons">groups</span>
                     </Link>
                 </li>
+                */}
                 <li>
                     <Link className={`${pageIndex === 2 ? "actual-page" : ""} 
                     ${user.role === "DEVELOPER" || user.role === "Admin" || user.role === "Voluntario" ? "" : "none"}`} 

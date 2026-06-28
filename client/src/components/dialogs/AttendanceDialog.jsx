@@ -15,27 +15,49 @@ function AttedanceDialog({ open, onClose, id, onNotification}) {
         onClose();
     }
 
-    const handleAttendanceTrue = (id) => {
-        setAttendanceClass(prev => ({
-            ...prev,
-            alunos: prev.alunos.map(aluno =>
-                aluno.id === id
-                    ? { ...aluno, presenca: true }
-                    : aluno
-            )
-        }));
+    const handleAttendanceTrue = async (presenca) => {
+        console.log(presenca);
+        try {
+            await api.put(`/Presenca/update/${presenca.id}`, {
+                aulaId: presenca.aulaId,
+                alunoId: presenca.alunoId,
+                presente: true
+            });
+
+            setAttendanceClass(prev =>
+                prev.map(item =>
+                    item.id === presenca.id
+                        ? { ...item, presente: true }
+                        : item
+                )
+            );
+        } catch (err) {
+            console.error(err);
+            onNotification("Erro ao atualizar presença.");
+        }
     };
 
-    const handleAttendanceFalse = (id) => {
-        setAttendanceClass(prev => ({
-            ...prev,
-            alunos: prev.alunos.map(aluno =>
-                aluno.id === id
-                    ? { ...aluno, presenca: false }
-                    : aluno
-            )
-        }));
+    const handleAttendanceFalse = async (presenca) => {
+        try {
+            await api.put(`/Presenca/update/${presenca.id}`, {
+                aulaId: presenca.aulaId,
+                alunoId: presenca.alunoId,
+                presente: false
+            });
+
+            setAttendanceClass(prev =>
+                prev.map(item =>
+                    item.id === presenca.id
+                        ? { ...item, presente: false }
+                        : item
+                )
+            );
+        } catch (err) {
+            console.error(err);
+            onNotification("Erro ao atualizar presença.");
+        }
     };
+
     const [attendanceClass, setAttendanceClass] = useState([])
     const fetchItems = async () => {
         try {
@@ -51,20 +73,6 @@ function AttedanceDialog({ open, onClose, id, onNotification}) {
 
         fetchItems();
     }, [open]);
-
-    const [exexe, exexex] = useState({
-        nome: "Robótica",
-        data: "2026-01-14",
-        alunos: [
-            { id: 1, nome: "Samuel Ribeiro", presenca: false },
-            { id: 2, nome: "João Silva", presenca: false },
-            { id: 3, nome: "Maria Souza", presenca: false },
-            { id: 4, nome: "Pedro Santos", presenca: false },
-            { id: 5, nome: "Ferdinando Soares", presenca: false },
-            { id: 6, nome: "Francis Alberto", presenca: false },
-            { id: 7, nome: "Michal Jackson", presenca: true },
-        ]
-    });
 
     if (!open) return null;
 
@@ -88,12 +96,12 @@ function AttedanceDialog({ open, onClose, id, onNotification}) {
                                 attendanceClass.map((a) => (
                                     <tr key={a.id} className={a.presente === true ? "student-positive" : ""}>
                                         <td className='small-column'>{a.id}</td>
-                                        <td>{a.id}</td>
+                                        <td>{a.aluno.nome}</td>
                                         <td className='actions-column center'>
-                                            <button className="material-icons positive" onClick={() => handleAttendanceTrue(a.id)}>
+                                            <button className="material-icons positive" onClick={() => handleAttendanceTrue(a)}>
                                                 check
                                             </button>
-                                            <button className="material-icons negative" onClick={() => handleAttendanceFalse(a.id)}>
+                                            <button className="material-icons negative" onClick={() => handleAttendanceFalse(a)}>
                                                 block
                                             </button>
                                         </td>
