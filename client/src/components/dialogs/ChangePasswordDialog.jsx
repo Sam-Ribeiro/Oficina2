@@ -8,7 +8,6 @@ function ChangePasswordDialog({ open, onClose, person, onNotification, }) {
     const [oldPassword, setOldPassword] = useState("");
 
     const handleSave = async () => {
-        
         if (newPassword !== confirmPassword) {    
             onNotification("As senhas não coincidem");
             return;

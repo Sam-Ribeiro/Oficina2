@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Select from "react-select";
 import "../../styles/dialog.css";
+import { api } from "../../services/api";
 
 function CreateClassDialog({
     open,
@@ -54,7 +55,7 @@ function CreateClassDialog({
     }));
 
 
-    const handleSave = () => {
+    const handleSave = async () => {
  
         if (!selectedWorkshop ||!selectedVolunteer ||!startDate ||!endDate) {
             onNotification("Preencha todos os campos obrigatórios.");
@@ -73,19 +74,97 @@ function CreateClassDialog({
             dataTermino: endDate
         };
 
-        console.log(newClass);
-
         if(turma){
-            onNotification("Turma editada com sucesso!")
-            console.log("Turma editada")
+            try{
+                let oficinaSelecionada = workshops.find(w => w.value === selectedWorkshop?.value)
+                let editTurma = {
+                    id: 0,
+                    dataInicio: startDate,
+                    dataTermino: endDate,
+                    status: "Status",
+                    oficinaId: selectedWorkshop?.value,
+                    oficina: {
+                    },
+                    voluntarioId: selectedVolunteer?.value,
+                    voluntario: {/*
+                        "id": 0,
+                        "nome": "string",
+                        "cpf": "string",
+                        "idade": 0,
+                        "email": "string",
+                        "senha": "string",
+                        "role": "string",
+                        "ra": "string"
+                        */
+                    },
+                    alunos: selectedStudents
+                    /*[
+                        {
+                        "id": 0,
+                        "nome": "string",
+                        "cpf": "string",
+                        "idade": 0,
+                        "email": "string",
+                        "senha": "string",
+                        "role": "string",
+                        "turmas": ["string"]
+                        }
+                    ]*/
+                    
+                }
+                const res = await api.put(`/Turma/update/${turma.id}`, editTurma);
+                onNotification("Turma editada com sucesso!");
+                handleClose();
+            } catch (err) {
+                console.log(err)
+                onNotification("Erro: Verifique os campos e tente novamente.")
+            }
         }
         else{
-            
-            onNotification("Turma criada com sucesso!")
-            console.log("Turma criada")
+            try{
+                let oficinaSelecionada = workshops.find(w => w.value === selectedWorkshop?.value)
+                let novaTurma = {
+                    id: 0,
+                    dataInicio: startDate,
+                    dataTermino: endDate,
+                    status: "Status",
+                    oficinaId: selectedWorkshop?.value,
+                    oficina: {
+                    },
+                    voluntarioId: selectedVolunteer?.value,
+                    voluntario: {/*
+                        "id": 0,
+                        "nome": "string",
+                        "cpf": "string",
+                        "idade": 0,
+                        "email": "string",
+                        "senha": "string",
+                        "role": "string",
+                        "ra": "string"
+                        */
+                    },
+                    alunos: selectedStudents
+                    /*[
+                        {
+                        "id": 0,
+                        "nome": "string",
+                        "cpf": "string",
+                        "idade": 0,
+                        "email": "string",
+                        "senha": "string",
+                        "role": "string",
+                        "turmas": ["string"]
+                        }
+                    ]*/
+                }
+                const res = await api.post("/Turma/create", novaTurma)
+                onNotification("Turma cadastrada com sucesso!");
+                handleClose();
+            } catch (err) {
+                console.log(err)
+                onNotification("Erro: Verifique os campos e tente novamente.")
+            }
         }
-
-        handleClose();
     };
 
     const handleClose = () => {
@@ -99,8 +178,8 @@ function CreateClassDialog({
     };
 
     const thisYear = new Date().getFullYear();
-    const minDate = `${thisYear-1}-01-01`;
-    const maxDate = `${thisYear+1}-12-31`;
+    const minDate = `${thisYear-2}-01-01`;
+    const maxDate = `${thisYear+2}-12-31`;
 
     if (!open) return null;
 

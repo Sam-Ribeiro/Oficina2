@@ -13,50 +13,10 @@ import { data } from "react-router-dom";
 
 function TurmasPage() {
     const [open, setOpen] = useState(true);
-    const toggleNav = () => {setOpen(prev => !prev);};
-        /*
-    const [item, setItem] = useState([]);
-    const fetchItems = async () => {
-        try {
-            const res = await api.get("/Turmas/get");
-            setItem(res.data);
-        } catch (err) {
-            console.error(err);
-        }
-    };
+    const toggleNav = () => setOpen(prev => !prev);
 
-    useEffect(() => {
-        fetchItems();
-    }, []);
-    */
-    const [selectedItem, setSelectedItem] = useState(null);
-
-    const handleDelete = async () => {
-        if (!selectedItem){ 
-            console.warn("Nenhuma turma selecionada para deletar.");
-            return;}
-
-        try {
-            console.log("Deletando turma com ID:", selectedItem);
-            await api.delete(`/Turmas/delete/${selectedItem}`);
-            await fetchItems();
-            setSelectedItem(null);
-        } catch (error) {
-            console.error("Erro ao deletar turma:", error);
-        }
-    };
-
-    const [items, setItem] = useState([
-        { id: 1, oficinaId: 1, oficina: 'Robótica', dataInicio: '2026-01-01', dataTermino: '2026-06-01', status: 'Ativa', responsavel: 'Samuel', voluntarioId: 1,
-            alunos:  [{id:1, nome: "Claudinho"}, {id:3, nome: "Teste"}]
-         },
-        { id: 2, oficinaId: 2, oficina: 'Pintura', dataInicio: '2026-02-01', dataTermino: '2026-07-01', status: 'Ativa', responsavel: 'Nicoly', voluntarioId: 2,
-            alunos:  [{id:2, nome:"Renato"}]
-         },
-        { id: 3, oficinaId: 1, oficina: 'Robótica', dataInicio: '2026-06-01', dataTermino: '2026-11-01', status: 'Ativa', responsavel: 'Mariana', voluntarioId: 3,
-            alunos:  [{id:2, nome:"Renato"}, {id:3, nome: "Teste"}, ]
-         },
-    ]);
+    const [items, setItems] = useState([]);
+    const [filter, setFilter] = useState("");
 
     const [workshops, setWorkshops] = useState([]);
     const [students, setStudents] = useState([]);
@@ -74,63 +34,77 @@ function TurmasPage() {
             console.error(err);
             setNotification("Erro ao carregar parâmetros.")
         }
+        try {
+            const res = await api.get("/Turma/get");
+            setItems(res.data);
+        } catch (err) {
+            console.error(err);
+        }
     };
     useEffect(() => {
         fetchItems();
     }, []);    
 
-    const [classes, setClasses] = useState([
-        { id: 1, data: '2026-01-15', conteudo: 'Introdução à Robótica', status: 'Concluído' },
-        { id: 2, data: '2026-01-22', conteudo: 'Montagem de Circuitos', status: 'Pendente' },
-        { id: 3, data: '2026-01-29', conteudo: 'Programação de Robôs', status: 'Pendente' },
-    ]);
+    
+    const filteredItems = items.filter(i =>
+        i.nome.toLowerCase().includes(filter.toLowerCase()) ||
+        i.idade.toString().includes(filter)
+    );
 
-    const [itemsList, setItemsList] = useState(items);
-
-    const onSearch = (filter) => {
-        setItemsList(
-            items.filter(i => 
-                i.oficina.toLowerCase().includes(filter.toLowerCase())
-            )
-        );
-    }
-
-    const [selectedItemEdit, setSelectedItemEdit] = useState(
-        {
-            id: "", alunos: [],dataTermino: "",dataInicio: "",oficinaId: "",voluntarioId: "", status: "",
-        }
-    )
-
-    const editItem = function(){
-       
-        const item = items.find(item => item.id === selectedItem);
-
-        if (!item) {
-            console.warn("Nenhum voluntario selecionado");
-            return;
-        }
-        setSelectedItemEdit(item);
-        setOpenCreateDialog(true);
-    }
-
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItemEdit, setSelectedItemEdit] = useState(null);
     const [openCreateDialog, setOpenCreateDialog] = useState(false);
     const [openManageDialog, setOpenManageDialog] = useState(false);
     const [notification, setNotification] = useState(null);
+
+    const handleDelete = async () => {
+        if (!selectedItem) {
+            console.warn("Nenhuma oficina selecionada para deletar.");
+            return;
+        }
+
+        try {
+            await api.delete(`/Oficina/delete/${selectedItem}`);
+            await fetchItems();
+            setSelectedItem(null);
+        } catch (error) {
+            console.error("Erro ao deletar oficina:", error);
+            setNotification("Erro ao deletar a oficina")
+        }
+    };
+
+    const editItem = () => {
+        const item = items.find(i => i.id === selectedItem);
+
+        if (!item) {
+            console.warn("Nenhuma oficina selecionado");
+            return;
+        }
+
+        setSelectedItemEdit(item);
+        setOpenCreateDialog(true);
+    };
+
+    const onAdd = () => {
+        setSelectedItemEdit(null);
+        setOpenCreateDialog(true);
+    };
+
     return (
     <>
         <Header onToggleNav={toggleNav}></Header>
         <div className="container">
             <SideNav pageIndex={4} open={open}></SideNav>
             <main>
-                <TableHeader pageName="Turmas" icon="class" onSearch={onSearch} onDelete={handleDelete} onAdd={() => setOpenCreateDialog(true)} onEdit={()=> editItem()}></TableHeader>
+                <TableHeader pageName="Turmas" icon="class" onDelete={handleDelete} onSearch={setFilter} onAdd={onAdd} onEdit={editItem}/>
                 <div className="table-container">
-                    <ClassTable items={itemsList} selectedItem={selectedItem} onSelect={setSelectedItem} setOpenManageDialog={setOpenManageDialog}></ClassTable>
+                    <ClassTable items={filteredItems} selectedItem={selectedItem} onSelect={setSelectedItem} setOpenManageDialog={setOpenManageDialog}/> 
                 </div>
                 <CreateClassDialog 
                     onNotification={(n) =>setNotification(n)} open={openCreateDialog} onClose={() => {setSelectedItemEdit(null);setOpenCreateDialog(false);}}
                     workshops={workshops} students={students} volunteers={volunteers} turma={selectedItemEdit}
                 />
-                <ManageClassDialog classes={classes} onNotification={(n) =>setNotification(n)} open={openManageDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenManageDialog(false);}}/>
+                <ManageClassDialog classes={items} onNotification={(n) =>setNotification(n)} open={openManageDialog} id={selectedItem} onClose={() =>{setSelectedItem(null); setOpenManageDialog(false);}}/>
                 <Notification message={notification} />
             </main>
         </div>

@@ -20,6 +20,7 @@ function LoginPage() {
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    id="campoEmail"
                 />
 
                 <input
@@ -27,7 +28,7 @@ function LoginPage() {
                     placeholder="Senha"
                     value={password}
                     onChange={(e) => setSenha(e.target.value)}
-
+                    id="campoSenha"
                 />
 
                 <LoginButton email={email} password={password} id="btnLogin" />
