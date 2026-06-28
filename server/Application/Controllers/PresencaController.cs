@@ -13,7 +13,20 @@ namespace server.Controllers
         public PresencaController(AppDbContext context) => _context = context;
 
         [HttpGet]
-        public IActionResult GetAll() => Ok(_context.Presencas.ToList());
+        public IActionResult GetAll(int? aulaId)
+        {
+            if (aulaId.HasValue)
+            {
+                var presencaFiltradas= _context.Presencas
+                    .Where(p => p.AulaId == aulaId.Value)
+                    .ToList();
+
+                return Ok(presencaFiltradas);
+            }
+
+
+            return Ok(_context.Presencas.ToList());
+        }
 
         [HttpPost("create")]
         public IActionResult Create([FromBody] PresencaCreateDto dto)
