@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../../styles/dialog.css'
 import '../../styles/table.css'
+import { api } from "../../services/api";
 
 function AttedanceDialog({ open, onClose, id, onNotification}) {
 
@@ -35,8 +36,23 @@ function AttedanceDialog({ open, onClose, id, onNotification}) {
             )
         }));
     };
+    const [attendanceClass, setAttendanceClass] = useState([])
+    const fetchItems = async () => {
+        try {
+            const res = await api.get(`/Presenca?aulaId=${id}`);
+            setAttendanceClass(res.data);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+    
+    useEffect(() => {
+        if (!open) return;
 
-    const [attendanceClass, setAttendanceClass] = useState({
+        fetchItems();
+    }, [open]);
+
+    const [exexe, exexex] = useState({
         nome: "Robótica",
         data: "2026-01-14",
         alunos: [
@@ -56,7 +72,7 @@ function AttedanceDialog({ open, onClose, id, onNotification}) {
         <div className="dialog-overlay">
             <div className="dialog dialog-class">
                 <div className="dialog-header">
-                    <h2>Chamada - {id} - {attendanceClass.nome} - {new Date(attendanceClass.data).toLocaleDateString("pt-Br") }</h2>
+                    <h2>Chamada - {id}</h2>
                     <button onClick={handleClose} className="material-icons close-button">close</button></div>
                 <div className="attedance-table-container">  
                     <table>
@@ -68,11 +84,11 @@ function AttedanceDialog({ open, onClose, id, onNotification}) {
                             </tr>
                         </thead>
                         <tbody>
-                            {attendanceClass.alunos.length > 0 ? (
-                                attendanceClass.alunos.map((a) => (
-                                    <tr key={a.id} className={a.presenca === true ? "student-positive" : ""}>
+                            {attendanceClass.length > 0 ? (
+                                attendanceClass.map((a) => (
+                                    <tr key={a.id} className={a.presente === true ? "student-positive" : ""}>
                                         <td className='small-column'>{a.id}</td>
-                                        <td>{a.nome}</td>
+                                        <td>{a.id}</td>
                                         <td className='actions-column center'>
                                             <button className="material-icons positive" onClick={() => handleAttendanceTrue(a.id)}>
                                                 check
