@@ -47,21 +47,6 @@ function AttedanceDialog({ open, onClose, id, onNotification}) {
             { id: 5, nome: "Ferdinando Soares", presenca: false },
             { id: 6, nome: "Francis Alberto", presenca: false },
             { id: 7, nome: "Michal Jackson", presenca: true },
-            { id: 8, nome: "Carlos Henrique", presenca: false },
-            { id: 9, nome: "Ana Beatriz", presenca: false },
-            { id: 10, nome: "Lucas Martins", presenca: false },
-            { id: 11, nome: "Juliana Souza", presenca: false },
-            { id: 12, nome: "Gabriel Oliveira", presenca: false },
-            { id: 13, nome: "Larissa Fernandes", presenca: false },
-            { id: 14, nome: "Matheus Costa", presenca: false },
-            { id: 15, nome: "Camila Rodrigues", presenca: false },
-            { id: 16, nome: "Rafael Almeida", presenca: false },
-            { id: 17, nome: "Isabela Santos", presenca: false },
-            { id: 18, nome: "Gustavo Pereira", presenca: false },
-            { id: 19, nome: "Mariana Lima", presenca: false },
-            { id: 20, nome: "Felipe Rocha", presenca: false },
-            { id: 21, nome: "Vitória Mendes", presenca: false },
-            { id: 22, nome: "Bruno Carvalho", presenca: false }
         ]
     });
 

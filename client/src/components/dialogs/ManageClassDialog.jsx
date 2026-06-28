@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../../styles/dialog.css'
 import AttedanceDialog from "./AttendanceDialog";
 import { api } from "../../services/api";
 
-function ManageClassDialog({ open, onClose, id, onNotification, classes, turma }) {
+function ManageClassDialog({ open, onClose, id, onNotification, turma }) {
     const handleClose = () => {
         onNotification(null);
         onClose();
@@ -16,7 +16,23 @@ function ManageClassDialog({ open, onClose, id, onNotification, classes, turma }
     const [classDate, setClassDate] = useState("");
     const [selectedItem, setSelectedItem] = useState(null);
     const [openAttendanceDialog, setOpenAttendanceDialog] = useState(false);
+    const [classes, setClasses] = useState([]);
+
+    const fetchClasses = async () => {
+        try {
+            const res = await api.get(`/Aula?turmaId=${turma.id}`);
+            setClasses(res.data);
+        } catch (err) {
+            console.error(err);
+        }
+    };
     
+    useEffect(() => {
+        if (!open) return;
+
+        fetchClasses();
+    }, [open, turma]);
+
     const handleSave = async () =>{
         try{
             let novaAula = {
@@ -31,34 +47,46 @@ function ManageClassDialog({ open, onClose, id, onNotification, classes, turma }
             console.log(err)
             onNotification("Erro: Verifique os campos e tente novamente.")
         }
+        fetchClasses()
     }
 
     const handleDownload = async () => {
-    try {
-        const res = await api.get(`/Turma/TodosCertificados/${turma.id}`, {
-            responseType: "blob",
-        });
+        try {
+            const res = await api.get(`/Turma/TodosCertificados/${turma.id}`, {
+                responseType: "blob",
+            });
 
-        const url = window.URL.createObjectURL(res.data);
+            const url = window.URL.createObjectURL(res.data);
 
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = `Certificados_Turma_${turma.id}.zip`;
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = `Certificados_Turma_${turma.id}.zip`;
 
-        document.body.appendChild(link);
-        link.click();
+            document.body.appendChild(link);
+            link.click();
 
-        link.remove();
-        window.URL.revokeObjectURL(url);
-    } catch (err) {
-        console.log(err);
-        onNotification("Erro ao carregar certificados.");
-    }
-};
+            link.remove();
+            window.URL.revokeObjectURL(url);
+        } catch (err) {
+            console.log(err);
+            onNotification("Erro ao carregar certificados.");
+        }
+    };
+
+    const handleDelete = async (id) => {
+        try {
+            await api.delete(`/Aula/delete/${id}`);
+            onNotification("Aula removida com sucesso!");
+
+            fetchClasses();
+        } catch (err) {
+            console.log(err);
+            onNotification("Erro ao remover aula.");
+        }
+    };
 
     if (!open) return null;
-    console.log("TURMA")
-    console.log(turma)
+    
     return (
         <div className="dialog-overlay">
             <div className="dialog dialog-class">
@@ -82,10 +110,19 @@ function ManageClassDialog({ open, onClose, id, onNotification, classes, turma }
                             classes.map((c) => (
                                 <li 
                                 key={c.id} className={c.status === "Concluído" ? "class-done" : ""}
-                                onClick={ () => {console.log("aaaaaaa");  setSelectedItem(c.id); setOpenAttendanceDialog(true);}
+                                onClick={ () => { setSelectedItem(c.id); setOpenAttendanceDialog(true);}
                                 }
                                 >
-                                        {new Date(c.data).toLocaleDateString("pt-BR")}
+                                        {new Date(c.dataHora).toLocaleDateString("pt-BR")}
+                                        <button
+                                            className="material-icons delete-class"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleDelete(c.id);
+                                            }}
+                                        >
+                                            delete
+                                        </button>
                                 </li>
                             ))
                         ) : (
