@@ -1,24 +1,57 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using server.Infrastructure.Repositories.Interfaces;
 using server.Models;
+using server.Infrastructure;
+using System.Linq;
 
-namespace server.Application.Controllers
+namespace server.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class PresencaController : ControllerBase
     {
-        private readonly IPresencaRepository _repository;
-        public PresencaController(IPresencaRepository repository) { _repository = repository; }
+        private readonly AppDbContext _context;
+        public PresencaController(AppDbContext context) => _context = context;
+
+        [HttpGet]
+        public IActionResult GetAll() => Ok(_context.Presencas.ToList());
 
         [HttpPost("create")]
-        public IActionResult CreatePresenca([FromBody] Presenca presenca)
+        public IActionResult Create([FromBody] PresencaCreateDto dto)
         {
-            _repository.AddPresenca(presenca);
-            return Ok(new { message = "Presença registrada!" });
+            var presenca = new Presenca
+            {
+                AulaId = dto.AulaId,
+                AlunoId = dto.AlunoId,
+                Presente = dto.Presente
+            };
+            _context.Presencas.Add(presenca);
+            _context.SaveChanges();
+            return Ok(presenca);
         }
 
-        [HttpGet("get")]
-        public IActionResult GetPresencas() => Ok(_repository.GetPresencas());
+        [HttpPut("update/{id}")]
+        public IActionResult Update(int id, [FromBody] PresencaCreateDto dto)
+        {
+            var presenca = _context.Presencas.Find(id);
+            if (presenca == null) return NotFound();
+
+            presenca.AulaId = dto.AulaId;
+            presenca.AlunoId = dto.AlunoId;
+            presenca.Presente = dto.Presente;
+
+            _context.SaveChanges();
+            return Ok(presenca);
+        }
+
+        [HttpDelete("delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+            var presenca = _context.Presencas.Find(id);
+            if (presenca == null) return NotFound();
+
+            _context.Presencas.Remove(presenca);
+            _context.SaveChanges();
+            return Ok(new { message = "Presença removida com sucesso." });
+        }
     }
 }

@@ -79,29 +79,66 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "server.Application.Controllers.AulaController",
-    "Method": "CreateAula",
+    "ContainingType": "server.Controllers.AulaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Aula",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Controllers.AulaController",
+    "Method": "Create",
     "RelativePath": "api/Aula/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "aula",
-        "Type": "server.Models.Aula",
+        "Name": "dto",
+        "Type": "AulaCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "server.Application.Controllers.AulaController",
-    "Method": "GetAulas",
-    "RelativePath": "api/Aula/get",
-    "HttpMethod": "GET",
+    "ContainingType": "server.Controllers.AulaController",
+    "Method": "Delete",
+    "RelativePath": "api/Aula/delete/{id}",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Controllers.AulaController",
+    "Method": "Update",
+    "RelativePath": "api/Aula/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "AulaCreateDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -142,25 +179,72 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "server.Application.Controllers.OficinaController",
-    "Method": "CreateOficina",
+    "ContainingType": "server.Controllers.OficinaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Oficina",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Controllers.OficinaController",
+    "Method": "Create",
     "RelativePath": "api/Oficina/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "oficina",
-        "Type": "server.Models.Oficina",
+        "Name": "dto",
+        "Type": "server.Models.OficinaCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "server.Application.Controllers.OficinaController",
-    "Method": "GetOficinas",
-    "RelativePath": "api/Oficina/get",
+    "ContainingType": "server.Controllers.OficinaController",
+    "Method": "Delete",
+    "RelativePath": "api/Oficina/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Controllers.OficinaController",
+    "Method": "Update",
+    "RelativePath": "api/Oficina/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "server.Models.OficinaCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Controllers.PresencaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Presenca",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -168,25 +252,62 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "server.Application.Controllers.PresencaController",
-    "Method": "CreatePresenca",
+    "ContainingType": "server.Controllers.PresencaController",
+    "Method": "Create",
     "RelativePath": "api/Presenca/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "presenca",
-        "Type": "server.Models.Presenca",
+        "Name": "dto",
+        "Type": "PresencaCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "server.Application.Controllers.PresencaController",
-    "Method": "GetPresencas",
-    "RelativePath": "api/Presenca/get",
+    "ContainingType": "server.Controllers.PresencaController",
+    "Method": "Delete",
+    "RelativePath": "api/Presenca/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Controllers.PresencaController",
+    "Method": "Update",
+    "RelativePath": "api/Presenca/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PresencaCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Controllers.TurmaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Turma",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -194,29 +315,72 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "server.Application.Controllers.TurmaController",
-    "Method": "CreateTurma",
+    "ContainingType": "server.Controllers.TurmaController",
+    "Method": "Create",
     "RelativePath": "api/Turma/create",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "turma",
-        "Type": "server.Models.Turma",
+        "Name": "dto",
+        "Type": "server.Models.TurmaCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "server.Application.Controllers.TurmaController",
-    "Method": "GetTurmas",
-    "RelativePath": "api/Turma/get",
+    "ContainingType": "server.Controllers.TurmaController",
+    "Method": "Delete",
+    "RelativePath": "api/Turma/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Controllers.TurmaController",
+    "Method": "GetTodosCertificados",
+    "RelativePath": "api/Turma/TodosCertificados/{turmaId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "turmaId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "server.Controllers.TurmaController",
+    "Method": "Update",
+    "RelativePath": "api/Turma/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "server.Models.TurmaCreateDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
