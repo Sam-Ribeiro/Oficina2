@@ -68,27 +68,13 @@ Os testes de backend serão implementados utilizando **xUnit**, com foco em:
 
 **Objetivo:** garantir que a lógica do sistema funcione corretamente de forma isolada e integrada.
 
-
-### 🌐 Testes de API (Robot Framework)
-
-Os testes de API serão realizados com **Robot Framework**, validando:
-
-- Endpoints (GET, POST, PUT, DELETE)
-- Respostas da API
-- Autenticação e autorização
-
-**Objetivo:** garantir se o backend funciona em no todo.
-
-### 🖥️ Testes End-to-End (E2E) (Robot Framework)
+### 🖥️ Testes End-to-End (E2E) (PlayWright)
 
 
-Os testes E2E serão implementados com **Robot Framework**, simulando o comportamento real do usuário:
+Os testes E2E serão implementados com **PlayWright**, simulando o comportamento real do usuário:
 
 - Fluxo de login
-- Criação e gerenciamento de oficinas
-- Matrícula de alunos
-- Registro de presença
-- Geração e download de certificados
+- Criação e gerenciamento de oficinas, alunos, voluntarios e turmas 
 
 **Objetivo:** validar os fluxos completos do sistema em ambiente real.
 
@@ -101,9 +87,7 @@ Backend: C#
 
 Banco de Dados: SQL Server
 
-Testes unitários: xUnit
-
-Testes Front E2E e API: Robot Framework
+Testes Front E2E e API: Playwright
 
 ----
 
