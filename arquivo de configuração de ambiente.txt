@@ -1,0 +1,81 @@
+1. Pré-requisitos Gerais
+Antes de iniciar, certifique-se de ter instalado as ferramentas base para o desenvolvimento.
+
+Para o Back-end
+SDK do .NET 8.0: Disponível no site oficial da Microsoft.
+
+Visual Studio 2022 (Community Edition): Com a carga de trabalho "Desenvolvimento para Web e ASP.NET".
+
+SQL Server Express 2022: Sistema para gerenciamento do banco de dados.
+
+SQL Server Management Studio (SSMS): Interface gráfica para visualização das tabelas.
+
+Para o Front-end e Testes
+Node.js (LTS): Necessário para rodar o ambiente JavaScript e TypeScript.
+
+2. Preparação do Repositório
+Clone o projeto para uma pasta local usando o terminal de sua preferência:
+
+Bash
+git clone https://github.com/Sam-Ribeiro/Oficina2.git
+Acesse a pasta do projeto:
+
+Bash
+cd Oficina2
+Abra o arquivo de solução (Oficina2.sln) no Visual Studio 2022.
+
+3. Configuração e Execução do Back-end
+3.1. Banco de Dados
+No Visual Studio, abra o menu Ferramentas > Gerenciador de Pacotes NuGet > Console do Gerenciador de Pacotes.
+
+Digite o seguinte comando e pressione Enter:
+
+Bash
+Update-Database
+Este comando criará o banco de dados e todas as tabelas necessárias automaticamente com base nas configurações da sua aplicação.
+
+3.2. Execução da API
+Verifique se o projeto server está selecionado como projeto de inicialização na barra do Visual Studio.
+
+Certifique-se de que o perfil de execução está configurado para https.
+
+Pressione a tecla F5 (ou clique no botão "Play").
+
+O navegador abrirá automaticamente a página do Swagger no endereço: https://localhost:7046/swagger.
+
+3.3. Validação
+No Swagger, localize o método GET /api/Turma, clique em "Try it out" e depois em "Execute". Se o retorno for 200 OK, a API está pronta e funcionando.
+
+4. Configuração e Execução do Front-end
+Abra um terminal e acesse a pasta do front-end localizada na raiz do projeto:
+
+Bash
+cd client
+Instale as dependências necessárias para a interface:
+
+Bash
+npm install
+Inicie o servidor de desenvolvimento:
+
+Bash
+npm run dev
+A interface gráfica do usuário estará disponível no endereço: http://localhost:5173/
+
+5. Execução dos Testes Automatizados (Playwright)
+Em um terminal aberto na raiz do projeto, acesse a pasta de testes:
+
+Bash
+cd tests
+Instale as dependências do Playwright e os navegadores necessários:
+
+Bash
+npm install
+npx playwright install
+Execute os testes ponta-a-ponta (E2E) com o comando abaixo:
+
+Bash
+npx playwright test tests/ --project=chromium --headed --workers=1
+Para visualizar o relatório detalhado do resultado dos testes após a execução, utilize o comando:
+
+Bash
+npx playwright show-report
